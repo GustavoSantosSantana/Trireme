@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-section" id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required><br><br>
+            <input type="password" id="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="tracker-section" id="tracker-section" style="display: none;">
+        <h1>Time Tracker</h1>
+        <div id="timer-display">00:00:00</div>
+        <button id="start-study">Start Study</button>
+        <button id="start-break">Start Break</button>
+        <button id="stop-timer">Stop Timer</button>
+
+        <div class="chart-container">
+            <canvas id="timeChart"></canvas>
+        </div>
+
+        <h2>Weekly Report</h2>
+        <div class="chart-container">
+            <canvas id="weeklyChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
