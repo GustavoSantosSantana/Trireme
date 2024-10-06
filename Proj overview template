@@ -1,0 +1,68 @@
+# CSC154 Software Development 
+# Project Overview Template
+
+Project Name: Management App Project Plan 
+Team Number: 12
+Project Manager: Gustavo Enrique Santos Santana  
+Team Members: Gustavo/John/Michael/Patrick/Yifan/Fred
+
+
+-------------------------------------------------------------------------------------------------------------------
+1.	Project Objective
+	Briefly describe the primary goals and objectives of the project here.
+•	The primary goal of our group is to create an app with the needs of a student in mind. The team decided to put forth a plan to develop a time tracker/ management app. This app would help students track their study hours, breaks, complete and incomplete goals, and just their overall productivity, The app will provide other features like showing personalized analytics and insights to encourage better time management and study habits. 
+
+2.	Project Scope
+	Define the boundaries of the project, including what is included and excluded.
+Included		Excluded	
+Time Tracking	The ability to log study sessions, tasks to be completed, and breaks. 	Advanced AI Recs 	Using smart technology to suggest personalized options. 
+User Accounts	Basic account creation and login features.	Multi-Device Syncing	Keeping data updated across all user devices. 
+Task Categorization	The ability to organize study sessions by subject and or tasks.	Third Party Tool Integrations 	Ability to work with external tools and apps not affiliated with out own.
+Productivity Insights 	Viewable personalized statistics like “Total study time” and “Average session length” for the user. 	Monetization/Ads	Offering premium features or ads to generate income.
+Reminders	Push type of reminders to let the user know it is time to study or take a break. 	Mobile App (Web Based	A mobile based app option.
+User Interface	Simple, easy to use dashboard to for tracking time, and viewing progression or completed goals.		
+Data Storage	Ability to save user data locally or in the cloud. 		
+
+	List the main features and functionalities to be developed.
+•	Time Logging: Start, stop, and track study and break sessions. 
+•	Task Categorization: Ability to label sessions by subject or activity.
+•	Goal Setting: Set daily or weekly study goals.
+•	Productivity Analysis: Shows trends like total study time, and peak productivity.
+•	Reminders: Set and receive study session and break notifications.
+•	User Management: Create and manage multiple user accounts. 
+•	Dashboard: A simple interface that allows user to view progress, session logs, and goals, completed or not. 
+
+	The features and functionalities can be modified in future development.
+
+
+
+3.	Team Collaboration and Documentation Tools
+	Specify the collaboration and documentation tools / platforms that will be used in this project development.
+•	GitHub
+•	Trello 
+•	MS Teams
+•	MS Teams Recordings 
+•	Outlook 
+
+	Describe how your group will use these tools / platforms during this project development.
+•	GitHub: All major project details, documents, files, etc. will be sent and shared in our group repository. This allows us to all be on the same page when being able to view important pieces of information while working on our project. 
+•	Trello: Personal tasks will be written for everyone to see. They will be organized based on person/priority and moved or discarded upon completion. 
+•	MS Teams: The main point of communication and contact. MS Teams is being used to meet up every week, discuss goals, responsibilities and new ideas for the project. 
+•	MS Teams Recordings: In case a group member is missing, the record tool is utilized to keep a record of the meeting so any team member, present or not, can refer back to the material discussed previously. 
+•	Outlook: Outlook was the initial point of contact for the group and was used to send the original project file and GitHub invites. Not the primary contact route but, reliable enough to use if another contact tool cannot be utilized. 
+
+
+4.	Project Management Plan and Methodologies
+	Specify what project management methods and tools will be used in this project development.
+•	Agile Methodology
+•	Scrum Framework
+•	Trello
+•	GitHub
+•	MS Teams
+
+	Describe how your group will use these project management methods and tools during this project development.
+•	Agile methodology: Iterative development and regular feedback.
+•	Scrum Framework: Organized sprints and sprint reviews. 
+•	Trello: Task tracking and workflow management.
+•	GitHub: Version control for code collaboration and documentation.
+•	MS Teams: Quick updates and team communication.
