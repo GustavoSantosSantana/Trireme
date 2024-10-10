@@ -78,10 +78,16 @@ Describes a specific interaction between a user (or "actor") and the application
 2. **Use Case 2** (either Use Case Diagram or Use Case Specification)  
 3. **Use Case 3** (either Use Case Diagram or Use Case Specification)
 
-### 2.4 Project Assumptions and Dependencies  
-Outlines the factors that are assumed to be true for the project and the external elements that the project depends on. These assumptions and dependencies help manage risks by identifying potential challenges or factors that could impact the project’s success.
+### 2.4 Project Assumptions and Dependencies
 
----
+   1. **Technical Assumption**: The software assumes that it will be given factual data from which it can formulate a study schedule from.
+   2. **Operational Assumption**: The software assumes that users will have a basic understanding of the time it takes to do a task and familiarity with similar applications, reducing the need for extensive training.
+   3. **Business Assumption**: The software assumes a stable internet connection will be available to all users for accessing the application at all times.
+   4. **Resource Constraint**: The project is subject to a fixed budget of $256,342 and must be completed within a 6 month time frame.
+   5. **Technological Constraint**: The software must be able to run and appear correctly on mobile and traditional computer devices.
+   6. **External Constraint**: The software must comply with the current data protection regulatory laws and protect user data by handling it securely and in adherence to data protection laws.
+   7. **Operational Constraint**: The software must support multiple user accounts with different schedules and task assignments, requiring proper user authentication and secure schedule and personal info storage.
+   8. **Performance Constraint**: The software must handle multiple concurrent requests from a minimum of 680 users as well as maintaining a response time of less than 2 seconds under normal operating conditions.
 
 ## 3. Project Collaboration and Documentation  
 Specify what collaboration and documentation tools/platforms that will be used in this project development and how your group will use these tools/platforms.
@@ -130,11 +136,10 @@ Describe the attributes, qualities, and constraints of the application that are 
 | NFR1           | e.g., The application shall provide a user-friendly interface that allows users to complete tasks without prior training. | M |
 | NFR2           |                          |        |
 
-### 5.5 Implementation (Performance) Requirements (Optional)  
-Outline the technical aspects and constraints that need to be considered during the development of the application. List at least 2 implementation requirements with MOSCOW code.
+### 5.5 Implementation (Performance) Requirements (Optional)
 
 | Requirement ID | Requirement Description | MOSCOW |
 |----------------|--------------------------|--------|
-| IR1            | e.g., The development environment shall be set up using Visual Studio Code for code development. |   |
-| IR2            |                          |   |
-| IR3            |                          |   |
+| IR1            |The application should be developed using Python or JavaScript. |  S |
+| IR2            |The project should use Oracle as the primary database management system. | M  |
+| IR3            |The should be developed using Visual Studio Code and Github.  | M  |
