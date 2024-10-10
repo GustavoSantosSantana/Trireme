@@ -11,7 +11,7 @@
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
 |    x    |         x         |           x            |       x        |
-|    x    |         x         |           x            |       x        |
+|    2    |         Patrick Brown         |           sections 2.4 and 5.5 completed only          |       10/10/2024        |
 
 ---
 
