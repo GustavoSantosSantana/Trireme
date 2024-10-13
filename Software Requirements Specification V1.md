@@ -14,6 +14,7 @@
 |    1.2    |         Patrick Brown         |           sections 2.4 and 5.5 completed only          |       10/10/2024        |
 |    x    |         x         |           x            |       x        |
 |    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
+|    1.5    | Michael Lowell | Added Non-Functional requirements |       10/13/2024        |
 
 
 ---
@@ -169,8 +170,15 @@ Describe the attributes, qualities, and constraints of the application that are 
 
 | Requirement ID | Requirement Description | MOSCOW |
 |----------------|--------------------------|--------|
-| NFR1           | e.g., The application shall provide a user-friendly interface that allows users to complete tasks without prior training. | M |
-| NFR2           |                          |        |
+| NFR1           | The application must make use of common affordances to allow users to use it like they would any other program. | M |
+| NFR2           | The application must inform the user every time they provide identifying data that will be stored. | M |
+| NFR3           | The application must respond promptly to user input, with a delay below 100ms even if ping times are higher. | M |
+| NFR4           | The database must be able to process all of our normal user's requests without slowdown during peak hours. | S |
+| NFR5           | The aplication must load in under 1s on current generation mobile devices. | S |
+| NFR6           | The web portal must load as fast as Youtube on all web platforms. | S |
+| NFR7           | The web portal must support all modern browsers (chromium and firefox). | S |
+| NFR8           | The aplication must load in under 1s on last generation mobile devices. | C |
+| NFR9           | The aplication must load in under 1s on legacy mobile devices. | W |
 
 ### 5.5 Implementation (Performance) Requirements (Optional)
 
