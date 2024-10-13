@@ -10,8 +10,11 @@
 
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
+|    1.1    |         Gustavo Santos         |           Created and tweaked the document          |       10/9/2024        |
+|    1.2    |         Patrick Brown         |           sections 2.4 and 5.5 completed only          |       10/10/2024        |
 |    x    |         x         |           x            |       x        |
-|    2    |         Patrick Brown         |           sections 2.4 and 5.5 completed only          |       10/10/2024        |
+|    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
+
 
 ---
 
@@ -19,7 +22,7 @@
 
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
-|    x     |         x         |  x   |
+|    Gustavo Santos     |         1.1-1.4         |  10/13/2024   |
 |    x     |         x         |  x   |
 
 ---
@@ -83,6 +86,10 @@ Describe the project's goals, the steps to achieve these goals, and the expected
 ### 2.1 Project Features / Functions  
 List at least 3 main features and functionalities to be developed.
 
+1. **Task Timer**: Core functionality that allows users to start, pause, and stop a timer for specific tasks or study sessions, providing the foundation for tracking time spent on activities.
+2. **Daily and Weekly Reports**: Automatically generate detailed reports summarizing the time spent on tasks, helping users analyze their productivity patterns and make improvements.
+3. **Goal Setting**: Enables users to set daily or weekly time goals for tasks, providing motivation and tracking progress towards productivity targets.
+
 ### 2.2 User Stories  
 Simple, concise description of a feature or requirement from the perspective of an end user. User stories are often used in Agile development methodologies to capture user needs and facilitate communication between stakeholders. List at least 3 user story statements to briefly describe the type of user, what they want and why.
 
@@ -135,9 +142,9 @@ Outline the high-level needs of the business or organization that the applicatio
 
 | Requirement ID | Requirement Description | MOSCOW |
 |----------------|--------------------------|--------|
-| BR1            | e.g., The application must provide tools for users to interact with the company, such as customer portals, live chat, and automated notifications. | M |
-| BR2            |                          |        |
-| BR3            |                          |        |
+| BR1            | The application must allow users to start, pause, and stop a timer to track time spent on tasks. | M |
+| BR2            | The application must generate daily and weekly reports that summarize time spent on various tasks. | M |
+| BR3            | The application must enable users to set time-tracking goals for tasks or categories. | M |
 
 ### 5.2 User Requirements  
 Describe what the end users need or expect from the application. These requirements focus on the functionality and usability aspects of the software from the user's perspective. List at least 3 user requirements with MOSCOW code.
