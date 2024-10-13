@@ -49,13 +49,32 @@
 ## 1. Introduction
 
 ### 1.1 Project Objectives  
-Define the primary goals of the software being developed and set clear expectations for what the system aims to achieve.
+Define the primary goals of the software being developed and set clear expectations for what the system aims to achieve.  
+
+**• The primary goal of our group is to create an app with the needs of a student in mind. The team decided to put forth a plan to develop a time tracker/ management app. This app would help students track their study hours, breaks, complete and incomplete goals, and just their overall productivity, The app will provide other features like showing personalized analytics and insights to encourage better time management and study habits.**
+
 
 ### 1.2 Project Scope  
 Define the boundaries of the project, including what is included and excluded.
+| Included | Excluded |
+| --- | --- |
+| **Time Tracking**: The ability to log study sessions, tasks to be completed, and breaks. | **Advanced AI Recs**: Using smart technology to suggest personalized options. |
+| **User Accounts**: Basic account creation and login features. | **Multi-Device Syncing**: Keeping data updated across all user devices. |
+| **Task Categorization**: Organize study sessions by subject and tasks. | **Third Party Tool Integrations**: Ability to work with external tools and apps not affiliated with our own. |
+| **Productivity Insights**: View personalized statistics like "Total study time" and "Average session length." | **Monetization/Ads**: Offering premium features or ads to generate income. |
+| **Reminders**: Push notifications for study or break reminders. | **Mobile App (Web-Based)**: A mobile-based app option. |
+| **User Interface**: Simple, easy-to-use dashboard for tracking time and viewing progression or completed goals. | |
+| **Data Storage**: Ability to save user data locally or in the cloud. | |
+
 
 ### 1.3 Project Overview  
 Describe the project's goals, the steps to achieve these goals, and the expected outcomes. Outline the project schedule, necessary resources, and status.
+* As previously mentioned, the primary goal of the project is to develop and app that helps students' be successful in their studies. This being a time tracker/management app.
+* There aren't a specified set of steps being followed in the process. We do however have a routine. The group meets sometime during the week, plan out the duties for said week, share information such as documents, ideas, responsibilites etc and all work on the project for another successful cycle.
+* As for outcomes, we would like to have our project coherent and concise. To develop a reputable app that can earn us a good standing during the review phase of the evaluation. 
+* We follow the schedule provided by the instructor.
+
+![image](https://github.com/user-attachments/assets/cfc78ae2-afef-4a0c-9a41-d508942942d9)
 
 ---
 
@@ -91,12 +110,22 @@ Describes a specific interaction between a user (or "actor") and the application
 
 ## 3. Project Collaboration and Documentation  
 Specify what collaboration and documentation tools/platforms that will be used in this project development and how your group will use these tools/platforms.
+- **GitHub**: All major project details, documents, files, etc., will be shared in our group repository. This ensures the team can access important information while working on the project.
+- **Trello**: Personal tasks will be visible to everyone, organized by person/priority, and moved or discarded upon completion.
+- **MS Teams**: The main point of communication, used for weekly meetings, discussing goals, responsibilities, and new ideas.
+- **MS Teams Recordings**: In case of absence, meeting recordings will be kept so team members can refer back to previous discussions.
+- **Outlook**: Initially used to send the original project file and GitHub invites. While not the primary contact route, it's a reliable backup if other tools are unavailable.
+
 
 ---
 
 ## 4. Project Management  
 Specify what project management methods and tools will be used in this project development and how your group will use these methods and tools.
-
+- **Agile Methodology**: Iterative development with regular feedback.
+- **Scrum Framework**: Organized sprints and sprint reviews.
+- **Trello**: Task tracking and workflow management.
+- **GitHub**: Version control for code collaboration and documentation.
+- **MS Teams**: Quick updates and team communication.
 ---
 
 ## 5. Requirements Specification
