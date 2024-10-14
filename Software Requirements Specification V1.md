@@ -15,6 +15,8 @@
 |    x    |         x         |           x            |       x        |
 |    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
 |    1.5    | Michael Lowell | Added Non-Functional requirements |       10/13/2024        |
+|    1.6    | * | * | * |
+|    1.7    | Michael Lowell | 1st draft of use cases |       10/14/2024        |
 
 
 ---
@@ -101,9 +103,10 @@ Simple, concise description of a feature or requirement from the perspective of 
 ### 2.3 Use Cases  
 Describes a specific interaction between a user (or "actor") and the application to achieve a particular goal. It outlines the steps involved in this interaction and can help to clarify functional requirements. List at least 3 user cases to describe a set of interactions between a system and one or more actors.
 
-1. **Use Case 1** (either Use Case Diagram or Use Case Specification)  
-2. **Use Case 2** (either Use Case Diagram or Use Case Specification)  
-3. **Use Case 3** (either Use Case Diagram or Use Case Specification)
+1. An authenticated user creates a task with a name, optional descriptor, and either a duration, due-date, or time interval. The task is saved to the database and rendered on the screen. Timers are started during the relevant time periods.  
+2. A user logs in while a pre-set task is running. The program alerts the user that the task is in progress and begins it's timers.
+3. A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts.
+4. Whenever the program starts a timer, it alerts the user, possibly with a sound effect. The program will always shows all active timers, so long as it is running. The user may choose to pause or cancel any active timers.
 
 ### 2.4 Project Assumptions and Dependencies
 
