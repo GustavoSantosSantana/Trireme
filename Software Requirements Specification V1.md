@@ -161,9 +161,22 @@ Detail the specific behaviors, functions, and capabilities that the application 
 
 | Requirement ID | Requirement Description | MOSCOW |
 |----------------|--------------------------|--------|
-| FR1            | e.g., The application shall provide user authentication mechanisms to ensure secure access. | M |
-| FR2            |                          |        |
-| FR3            |                          |        |
+| FR1            | The application must allow users to create new tasks, including a name, description, optional date/time, subject tag, and predefined priority. | M |
+| FR2            | The application must allow users to view a list of all created tasks in either list or calendar view. | M |
+| FR3            | The application must allow users to edit the details of existing tasks. | M |
+| FR4            | The application must allow users to delete any existing task. | M |
+| FR5            | The application must allow tasks to be tagged as 'Completed' or 'In Progress'. | M |
+| FR6            | The application must allow users to schedule tasks or alot time-blocks to a given task. | M |
+| FR7            | The application must implement notifications for upcoming task deadlines in-app or email opt-in, as well as custom in-app alerts for time tracked tasks. | M |
+| FR8            | The application must sort and display tasks in order of Due Date > Priority > Creation Date as default. | M |
+| FR9            | The application should allow custom sorting of tasks according to Due Date, Priority, Subject Tag, Creation Date, or Completion. | S |
+| FR10           | The application should provide data persistance in the case of unexpected shutdowns, i.e. a drafts feature. | S |
+| FR11           | The application should include progress statistics of active tasks with subtasks. | S |
+| FR12           | The application should allow the user to create subtasks or checklists for tasks. | S |
+| FR13           | The application could include external APIs for integration with other existing calendar/scheduling apps. | C |
+| FR14           | The application could allow users to set custom goals for subjects and include progress statistics towards those goals. | C |
+| FR15           | The application could allow users to optionally set tasks as recurring and automatically populate future tasks based on a specified timeframe. | C |
+| FR16           | The application will not allow the user to add other users to tasks for group collaboration. | W |
 
 ### 5.4 Non-Functional Requirements  
 Describe the attributes, qualities, and constraints of the application that are not directly related to specific functionalities. List at least 3 non-functional requirements with MOSCOW code.
