@@ -102,35 +102,35 @@ Simple, concise description of a feature or requirement from the perspective of 
 ### 2.3 Use Cases  
 Describes a specific interaction between a user (or "actor") and the application to achieve a particular goal. It outlines the steps involved in this interaction and can help to clarify functional requirements. List at least 3 user cases to describe a set of interactions between a system and one or more actors.
 
-1. **Use Case 1: Start a Study Session**
-   Actor: Student
-   Goal: Start tracking time for a study session.
-   Precondition: The user must be logged into their account.
-Steps:
-   The user selects the subject or task they want to track.
-   The user clicks "Start Timer."
-   The app begins tracking the time spent on the task.
-Postcondition: The app logs the duration of the study session and saves it to the user’s account.
+1. **Use Case 1: Start a Study Session** <br>
+   Actor: Student<br>
+   Goal: Start tracking time for a study session.<br>
+   Precondition: The user must be logged into their account.<br><br>
+Steps:<br>
+   The user selects the subject or task they want to track.<br>
+   The user clicks "Start Timer."<br>
+   The app begins tracking the time spent on the task.<br>
+Postcondition: The app logs the duration of the study session and saves it to the user’s account.<br>
 
-2. **Use Case 2: Set a Goal for Study Time**
-   Actor: Student
-   Goal: Set a target amount of study time for a specific task or subject.
-   Precondition: The user must have tasks created within their account.
-Steps:
-   The user selects a task or subject.
-   The user enters the desired study goal (e.g., 5 hours per week).
-   The app saves the goal and displays it in the user dashboard.
-Postcondition: The app tracks the user's progress toward the goal and shows updates in reports.
+2. **Use Case 2: Set a Goal for Study Time**<br>
+   Actor: Student<br>
+   Goal: Set a target amount of study time for a specific task or subject.<br>
+   Precondition: The user must have tasks created within their account.<br><br>
+Steps:<br>
+   The user selects a task or subject.<br>
+   The user enters the desired study goal (e.g., 5 hours per week).<br>
+   The app saves the goal and displays it in the user dashboard.<br>
+Postcondition: The app tracks the user's progress toward the goal and shows updates in reports.<br>
 
-3. **Use Case 3: View Productivity Insights**
-   Actor: Student
-   Goal: View detailed reports of study sessions and productivity insights.
-   Precondition: The user must have completed at least one study session.
-Steps:
-   The user navigates to the "Reports" section of the app.
+3. **Use Case 3: View Productivity Insights**<br>
+   Actor: Student<br>
+   Goal: View detailed reports of study sessions and productivity insights.<br>
+   Precondition: The user must have completed at least one study session.<br><br>
+Steps:<br>
+   The user navigates to the "Reports" section of the app.<br>
    The app generates and displays daily or weekly reports, including total study time, average session duration, and task completion rates.
-   The user can download or view the report directly.
-Postcondition: The user views or downloads their productivity report.
+   The user can download or view the report directly.<br>
+Postcondition: The user views or downloads their productivity report.<br>
 
 ### 2.4 Project Assumptions and Dependencies
 
