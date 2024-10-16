@@ -15,7 +15,7 @@
 |    x    |         x         |           x            |       x        |
 |    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
 |    1.5    | Michael Lowell | Added Non-Functional requirements |       10/13/2024        |
-|    1.6    | * | * | * |
+|    1.6    | John Diveris | Added Functional Requirements |       10/13/2024        |
 |    1.7    | Michael Lowell | 1st draft of use cases |       10/14/2024        |
 
 
