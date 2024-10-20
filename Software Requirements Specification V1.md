@@ -32,7 +32,7 @@
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
 |    Gustavo Santos     |         1.1-1.4         |  10/13/2024   |
-|    Gustavo Santos     |         1.5-1.8.2         |  10/20/2024   |
+|    Gustavo Santos     |         1.5-1.8.3        |  10/20/2024   |
 
 ---
 
