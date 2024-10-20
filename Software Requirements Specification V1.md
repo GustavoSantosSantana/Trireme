@@ -103,6 +103,8 @@ Simple, concise description of a feature or requirement from the perspective of 
 ### 2.3 Use Cases  
 Describes a specific interaction between a user (or "actor") and the application to achieve a particular goal. It outlines the steps involved in this interaction and can help to clarify functional requirements. List at least 3 user cases to describe a set of interactions between a system and one or more actors.
 
+![Use Case Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/images/UseCaseDiagramCaching.jpg?raw=true)
+
 1. An authenticated user creates a task with a name, optional descriptor, and either a duration, due-date, or time interval. The task is saved to the database and rendered on the screen. Timers are started during the relevant time periods.  
 2. A user logs in while a pre-set task is running. The program alerts the user that the task is in progress and begins it's timers.
 3. A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts.
