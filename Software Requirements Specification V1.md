@@ -11,10 +11,17 @@
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
 |    1.1    |         Gustavo Santos         |           Created and tweaked the document          |       10/9/2024        |
-|    1.2    |         Patrick Brown         |           sections 2.4 and 5.5 completed only          |       10/10/2024        |
-|    x    |         x         |           x            |       x        |
+|    1.2    |         Patrick Brown         |           Sections 2.4 and 5.5 completed only          |       10/10/2024        |
+|    1.3    |         Frederick Hernandez        |           Completed section 1 , 3 and 4            |       10/13/2024        |
 |    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
 |    1.5    | Michael Lowell | Added Non-Functional requirements |       10/13/2024        |
+|    1.6    | John Diveris | Added Functional Requirements |       10/13/2024        |
+|    1.7    | Michael Lowell | 1st draft of use cases |       10/14/2024        |
+|    1.8   | Yifan Gao | Completed section 2.2 and 5.2 |       10/14/2024        |
+|    1.8.1   | Michael Lowell | Added user cases visual |       10/20/2024        |
+|    1.8.2   | Gustavo Santos | Added business requirements visual |       10/20/2024        |
+
+
 
 
 ---
@@ -24,7 +31,7 @@
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
 |    Gustavo Santos     |         1.1-1.4         |  10/13/2024   |
-|    x     |         x         |  x   |
+|    Gustavo Santos     |         1.5-1.8.2         |  10/20/2024   |
 
 ---
 
@@ -94,16 +101,19 @@ List at least 3 main features and functionalities to be developed.
 ### 2.2 User Stories  
 Simple, concise description of a feature or requirement from the perspective of an end user. User stories are often used in Agile development methodologies to capture user needs and facilitate communication between stakeholders. List at least 3 user story statements to briefly describe the type of user, what they want and why.
 
-1. As a `<type of user>`, I want `<some goal>` so that `<some benefits>`.  
-2. As a `<type of user>`, I want `<some goal>` so that `<some benefits>`.  
-3. As a `<type of user>`, I want `<some goal>` so that `<some benefits>`.
+1. As a student, I want to track my study time so that I can optimize my study habits and be more productive.  
+2. As a user, I want to set reminders for breaks so that I can avoid burnout and stay focused throughout my study sessions.  
+3. As a busy student, I want to view my daily and weekly productivity reports so that I can assess my performance and make improvements.
 
 ### 2.3 Use Cases  
 Describes a specific interaction between a user (or "actor") and the application to achieve a particular goal. It outlines the steps involved in this interaction and can help to clarify functional requirements. List at least 3 user cases to describe a set of interactions between a system and one or more actors.
 
-1. **Use Case 1** (either Use Case Diagram or Use Case Specification)  
-2. **Use Case 2** (either Use Case Diagram or Use Case Specification)  
-3. **Use Case 3** (either Use Case Diagram or Use Case Specification)
+![Use Case Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UseCaseDiagramCaching.jpeg?raw=true)
+
+1. An authenticated user creates a task with a name, optional descriptor, and either a duration, due-date, or time interval. The task is saved to the database and rendered on the screen. Timers are started during the relevant time periods.  
+2. A user logs in while a pre-set task is running. The program alerts the user that the task is in progress and begins it's timers.
+3. A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts.
+4. Whenever the program starts a timer, it alerts the user, possibly with a sound effect. The program will always shows all active timers, so long as it is running. The user may choose to pause or cancel any active timers.
 
 ### 2.4 Project Assumptions and Dependencies
 
@@ -147,14 +157,23 @@ Outline the high-level needs of the business or organization that the applicatio
 | BR2            | The application must generate daily and weekly reports that summarize time spent on various tasks. | M |
 | BR3            | The application must enable users to set time-tracking goals for tasks or categories. | M |
 
+![Business Requirements](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/BusinessRequirementsVisual.jpeg?raw=true)
+
 ### 5.2 User Requirements  
 Describe what the end users need or expect from the application. These requirements focus on the functionality and usability aspects of the software from the user's perspective. List at least 3 user requirements with MOSCOW code.
 
 | Requirement ID | Requirement Description | MOSCOW |
 |----------------|--------------------------|--------|
-| UR1            | e.g., Users must be able to create an account and log in securely using their email and password. | M |
-| UR2            |                          |        |
-| UR3            |                          |        |
+| UR1            | Users must be able to create an account and log in securely using their email and password. | M |
+| UR2            | Users must be able to start, pause, and stop a timer for tracking time spent on specific tasks or study sessions.| M |
+| UR3            | Users must be able to view a list of tasks, categorized by subject, priority, or due date. | M |
+| UR4            | Users must be able to set reminders for tasks or breaks via push notifications or in-app alerts. | M |
+| UR5            | Users must be able to set goals for specific tasks (e.g., study for 2 hours on a task) and track their progress. | M |
+| UR6            | Users should be able to edit or delete existing tasks and study sessions. | S |
+| UR7            | Users should be able to generate and view daily or weekly reports summarizing their productivity (e.g., time spent, tasks completed). | S |
+| UR8            | Users should be able to tag tasks as "Completed" or "In Progress" to track their progress efficiently. | S |
+| UR9            | Users could be able to set tasks as recurring based on a specific time interval (e.g., daily, weekly). | C |
+| UR10           | Users could be able to customize the sorting of tasks by due date, priority, subject, or progress status. | C |
 
 ### 5.3 Functional Requirements  
 Detail the specific behaviors, functions, and capabilities that the application must provide. List at least 3 functional requirements with MOSCOW code.
