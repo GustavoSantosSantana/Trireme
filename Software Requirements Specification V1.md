@@ -10,16 +10,17 @@
 
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
-|    1.1    |         Gustavo Santos         |           Created and tweaked the document          |       10/9/2024        |
-|    1.2    |         Patrick Brown         |           Sections 2.4 and 5.5 completed only          |       10/10/2024        |
-|    1.3    |         Frederick Hernandez        |           Completed section 1 , 3 and 4            |       10/13/2024        |
-|    1.4    |         Gustavo Santos         |           Did sections 2.1 and 5.1          |       10/13/2024        |
-|    1.5    | Michael Lowell | Added Non-Functional requirements |       10/13/2024        |
-|    1.6    | John Diveris | Added Functional Requirements |       10/13/2024        |
-|    1.7    | Michael Lowell | 1st draft of use cases |       10/14/2024        |
-|    1.8   | Yifan Gao | Completed section 2.2 and 5.2 |       10/14/2024        |
-|    1.8.1   | Michael Lowell | Added user cases visual |       10/20/2024        |
-|    1.8.2   | Gustavo Santos | Added business requirements visual |       10/20/2024        |
+|    1.1    | Gustavo Santos       |           Created and tweaked the document          |       10/9/2024        |
+|    1.2    | Patrick Brown        |           Sections 2.4 and 5.5 completed only          |       10/10/2024        |
+|    1.3    | Frederick Hernandez  |           Completed section 1 , 3 and 4            |       10/13/2024        |
+|    1.4    | Gustavo Santos       |           Did sections 2.1 and 5.1          |       10/13/2024        |
+|    1.5    | Michael Lowell       | Added Non-Functional requirements |       10/13/2024        |
+|    1.6    | John Diveris         | Added Functional Requirements |       10/13/2024        |
+|    1.7    | Michael Lowell       | 1st draft of use cases |       10/14/2024        |
+|    1.8    | Yifan Gao            |  Completed section 2.2 and 5.2 |       10/14/2024        |
+|    1.8.1  | Michael Lowell       | Added user cases visual |       10/20/2024        |
+|    1.8.2  | Gustavo Santos       | Added business requirements visual |       10/20/2024        |
+|    1.8.3  | John Diveris         | 2nd Draft of Use Cases  |       10/20/2024        |
 
 
 
@@ -108,12 +109,94 @@ Simple, concise description of a feature or requirement from the perspective of 
 ### 2.3 Use Cases  
 Describes a specific interaction between a user (or "actor") and the application to achieve a particular goal. It outlines the steps involved in this interaction and can help to clarify functional requirements. List at least 3 user cases to describe a set of interactions between a system and one or more actors.
 
+---
+**Use Case Title:** User Creates a Task
+
+**Actor(s):** 
+- Primary: User
+- Secondary: Database
+
+**Preconditions:**
+- User must be logged in.
+
+**Description:** An authenticated user creates a task with a name, optional descriptor, and either a duration, due-date, or time interval. The task is saved to the database and rendered on the screen. Timers are started during the relevant time periods.
+
+**Steps:**
+1. The user selects the `Create Task` option.
+2. The system prompts the user for task details (name, description, due-date/duration/interval, optional additional tags)
+3. The user fills out all required form fields and submits.
+4. The system validates the input details, if invalid a proper error message will display.
+5. The system saves the task data to the database.
+6. The database returns a success message to the system. If unsuccessful, the system reports the error to user.
+7. The system displays a success message to user and displays the new task.
+
+**Postconditions:**
+- A new task is successfully stored in the database.
+- A new task is displayed in the task list.
+- A new task is present in the user's calendar.
+- If applicable, timers may be started and running if the task is set to begin immediately.
+
+**Diagram:**<br>
 ![Use Case Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UseCaseDiagramCaching.jpeg?raw=true)
 
-1. An authenticated user creates a task with a name, optional descriptor, and either a duration, due-date, or time interval. The task is saved to the database and rendered on the screen. Timers are started during the relevant time periods.  
-2. A user logs in while a pre-set task is running. The program alerts the user that the task is in progress and begins it's timers.
-3. A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts.
-4. Whenever the program starts a timer, it alerts the user, possibly with a sound effect. The program will always shows all active timers, so long as it is running. The user may choose to pause or cancel any active timers.
+---
+
+**Use Case Title**: Logging In While Task In Progress
+
+**Actor(s)**: 
+- Primary: System
+- Secondary: User
+
+**Preconditions**: 
+- Preexisting task in database with a set time interval.
+- The interval must be scheduled for the time of user login.
+
+**Description**: A user logs in while a pre-set task is running. The program alerts the user that the task is in progress and begins its timers.
+
+**Steps**:
+1. User logs into account.
+2. System retrieves user task information from database to display to user.
+3. System checks task data for any current meetings/task intervals.
+4. System finds an ongoing interval and starts timers.
+5. System displays task list to user.
+6. System displays message to user to alert them to an ongoing interval, and displays a timer widget.
+7. User may interact with the widget to start/stop the timer.
+
+**Postconditions**: 
+- Timer widget displayed to user.
+- Timer running for this associated task.
+
+---
+
+**Use Case Title**: Interval Task Starting Soon
+
+**Actor(s)**: 
+- Primary: System
+- Secondary: User
+
+**Preconditions**: 
+- Preexisting task in database with a set time interval.
+- The interval must be starting soon.
+
+**Description**: A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts
+
+**Steps**:
+1. User logs into system.
+2. System retrieves user task information from database to display to user.
+3. System checks task data for any upcoming meetings/task intervals.
+4. System finds an upcoming task interval.
+5. System displays task list.
+6. System alerts user to the upcoming task.<br>
+...
+7. System alerts user again once the scheduled time interval starts.
+8. System starts timer and displays widget.
+   
+**Postconditions**: 
+- Proper alert is displayed to user.
+- Timer is started and widget is displayed.
+---
+
+
 
 ### 2.4 Project Assumptions and Dependencies
 
