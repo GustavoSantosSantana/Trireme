@@ -21,6 +21,7 @@
 |    1.8.1  | Michael Lowell       | Added user cases visual |       10/20/2024        |
 |    1.8.2  | Gustavo Santos       | Added business requirements visual |       10/20/2024        |
 |    1.8.3  | John Diveris         | 2nd Draft of Use Cases  |       10/20/2024        |
+|    1.8.4  | Gustavo Santos       | Corrected some misspelled words |       10/20/2024        |
 
 
 
@@ -32,7 +33,7 @@
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
 |    Gustavo Santos     |         1.1-1.4         |  10/13/2024   |
-|    Gustavo Santos     |         1.5-1.8.3        |  10/20/2024   |
+|    Gustavo Santos     |         1.5-1.8.4        |  10/20/2024   |
 
 ---
 
@@ -81,8 +82,8 @@ Define the boundaries of the project, including what is included and excluded.
 
 ### 1.3 Project Overview  
 Describe the project's goals, the steps to achieve these goals, and the expected outcomes. Outline the project schedule, necessary resources, and status.
-* As previously mentioned, the primary goal of the project is to develop and app that helps students' be successful in their studies. This being a time tracker/management app.
-* There aren't a specified set of steps being followed in the process. We do however have a routine. The group meets sometime during the week, plan out the duties for said week, share information such as documents, ideas, responsibilites etc and all work on the project for another successful cycle.
+* As previously mentioned, the primary goal of the project is to develop and app that helps students be successful in their studies. This being a time tracker/management app.
+* There aren't a specified set of steps being followed in the process. We do however have a routine. The group meets sometime during the week, plan out the duties for said week, share information such as documents, ideas, responsibilities, etc. and all work on the project for another successful cycle.
 * As for outcomes, we would like to have our project coherent and concise. To develop a reputable app that can earn us a good standing during the review phase of the evaluation. 
 * We follow the schedule provided by the instructor.
 
@@ -123,7 +124,7 @@ Describes a specific interaction between a user (or "actor") and the application
 
 **Steps:**
 1. The user selects the `Create Task` option.
-2. The system prompts the user for task details (name, description, due-date/duration/interval, optional additional tags)
+2. The system prompts the user for task details (name, description, due date/duration/interval, optional additional tags)
 3. The user fills out all required form fields and submits.
 4. The system validates the input details, if invalid a proper error message will display.
 5. The system saves the task data to the database.
@@ -159,7 +160,7 @@ Describes a specific interaction between a user (or "actor") and the application
 3. System checks task data for any current meetings/task intervals.
 4. System finds an ongoing interval and starts timers.
 5. System displays task list to user.
-6. System displays message to user to alert them to an ongoing interval, and displays a timer widget.
+6. System displays message to user to alert them to an ongoing interval and displays a timer widget.
 7. User may interact with the widget to start/stop the timer.
 
 **Postconditions**: 
@@ -178,7 +179,7 @@ Describes a specific interaction between a user (or "actor") and the application
 - Preexisting task in database with a set time interval.
 - The interval must be starting soon.
 
-**Description**: A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins it's timers only once the time interval starts
+**Description**: A user logs in when a time-interval task will start soon. The program alerts the user upon login, as well as when the time interval is reached. The program begins its timers only once the time interval starts
 
 **Steps**:
 1. User logs into system.
@@ -203,7 +204,7 @@ Describes a specific interaction between a user (or "actor") and the application
    1. **Technical Assumption**: The software assumes that it will be given factual data from which it can formulate a study schedule from.
    2. **Operational Assumption**: The software assumes that users will have a basic understanding of the time it takes to do a task and familiarity with similar applications, reducing the need for extensive training.
    3. **Business Assumption**: The software assumes a stable internet connection will be available to all users for accessing the application at all times.
-   4. **Resource Constraint**: The project is subject to a fixed budget of $256,342 and must be completed within a 6 month time frame.
+   4. **Resource Constraint**: The project is subject to a fixed budget of $256,342 and must be completed within a 6-month time frame.
    5. **Technological Constraint**: The software must be able to run and appear correctly on mobile and traditional computer devices.
    6. **External Constraint**: The software must comply with the current data protection regulatory laws and protect user data by handling it securely and in adherence to data protection laws.
    7. **Operational Constraint**: The software must support multiple user accounts with different schedules and task assignments, requiring proper user authentication and secure schedule and personal info storage.
@@ -214,7 +215,7 @@ Specify what collaboration and documentation tools/platforms that will be used i
 - **GitHub**: All major project details, documents, files, etc., will be shared in our group repository. This ensures the team can access important information while working on the project.
 - **Trello**: Personal tasks will be visible to everyone, organized by person/priority, and moved or discarded upon completion.
 - **MS Teams**: The main point of communication, used for weekly meetings, discussing goals, responsibilities, and new ideas.
-- **MS Teams Recordings**: In case of absence, meeting recordings will be kept so team members can refer back to previous discussions.
+- **MS Teams Recordings**: In case of absence, meeting recordings will be kept so team members can refer to previous discussions.
 - **Outlook**: Initially used to send the original project file and GitHub invites. While not the primary contact route, it's a reliable backup if other tools are unavailable.
 
 
@@ -268,11 +269,11 @@ Detail the specific behaviors, functions, and capabilities that the application 
 | FR3            | The application must allow users to edit the details of existing tasks. | M |
 | FR4            | The application must allow users to delete any existing task. | M |
 | FR5            | The application must allow tasks to be tagged as 'Completed' or 'In Progress'. | M |
-| FR6            | The application must allow users to schedule tasks or alot time-blocks to a given task. | M |
+| FR6            | The application must allow users to schedule tasks or a lot time-blocks to a given task. | M |
 | FR7            | The application must implement notifications for upcoming task deadlines in-app or email opt-in, as well as custom in-app alerts for time tracked tasks. | M |
 | FR8            | The application must sort and display tasks in order of Due Date > Priority > Creation Date as default. | M |
 | FR9            | The application should allow custom sorting of tasks according to Due Date, Priority, Subject Tag, Creation Date, or Completion. | S |
-| FR10           | The application should provide data persistance in the case of unexpected shutdowns, i.e. a drafts feature. | S |
+| FR10           | The application should provide data persistence in the case of unexpected shutdowns, i.e. a drafts feature. | S |
 | FR11           | The application should include progress statistics of active tasks with subtasks. | S |
 | FR12           | The application should allow the user to create subtasks or checklists for tasks. | S |
 | FR13           | The application could include external APIs for integration with other existing calendar/scheduling apps. | C |
@@ -288,12 +289,12 @@ Describe the attributes, qualities, and constraints of the application that are 
 | NFR1           | The application must make use of common affordances to allow users to use it like they would any other program. | M |
 | NFR2           | The application must inform the user every time they provide identifying data that will be stored. | M |
 | NFR3           | The application must respond promptly to user input, with a delay below 100ms even if ping times are higher. | M |
-| NFR4           | The database must be able to process all of our normal user's requests without slowdown during peak hours. | S |
-| NFR5           | The aplication must load in under 1s on current generation mobile devices. | S |
-| NFR6           | The web portal must load as fast as Youtube on all web platforms. | S |
-| NFR7           | The web portal must support all modern browsers (chromium and firefox). | S |
-| NFR8           | The aplication must load in under 1s on last generation mobile devices. | C |
-| NFR9           | The aplication must load in under 1s on legacy mobile devices. | W |
+| NFR4           | The database must be able to process all our normal user's requests without slowdown during peak hours. | S |
+| NFR5           | The application must load in under 1s on current generation mobile devices. | S |
+| NFR6           | The web portal must load as fast as YouTube on all web platforms. | S |
+| NFR7           | The web portal must support all modern browsers (Chromium and Firefox). | S |
+| NFR8           | The application must load in under 1s on last generation mobile devices. | C |
+| NFR9           | The application must load in under 1s on legacy mobile devices. | W |
 
 ### 5.5 Implementation (Performance) Requirements (Optional)
 
@@ -301,4 +302,4 @@ Describe the attributes, qualities, and constraints of the application that are 
 |----------------|--------------------------|--------|
 | IR1            |The application should be developed using Python or JavaScript. |  S |
 | IR2            |The project should use Oracle as the primary database management system. | M  |
-| IR3            |The should be developed using Visual Studio Code and Github.  | M  |
+| IR3            |The project should be developed using Visual Studio Code and GitHub.  | M  |
