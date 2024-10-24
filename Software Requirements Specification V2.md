@@ -313,9 +313,7 @@ Describe the attributes, qualities, and constraints of the application that are 
 ## 6. High-level Design
 
 ### 6.1 Security (Required)
-Specify at least two security requirements to outline how the system will protect sensitive
-data, maintain user privacy, and prevent unauthorized access. Example of a Security
-Requirement:
+Specify at least two security requirements to outline how the system will protect sensitive data, maintain user privacy, and prevent unauthorized access. Example of a Security Requirement:
 Requirement ID: SEC1
 Description: User Authentication
 Requirement: The system shall implement …………….
@@ -324,9 +322,7 @@ Requirement: The system shall implement …………….
 6.1.2. Specification 2
 
 ### 6.2 Hardware (Required)
-Specify at least three physical components and infrastructure necessary to support the
-deployment and operation of the software application. Example of a Hardware
-Requirement:
+Specify at least three physical components and infrastructure necessary to support the deployment and operation of the software application. Example of a Hardware Requirement:
 Requirement ID: HW1
 Description: Server Processor
 Requirement: ……………….
@@ -336,10 +332,7 @@ Requirement: ……………….
 6.2.3. Specification 3
 
 ### 6.3 User Experience (Required)
-Describe at least two user experiences to outline how users will interact with the system
-and the overall experience they should have while using it. Use a free User Interface
-Design Software to create wireframe for each user interface. Example of a User
-Experience Requirement:
+Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
 Requirement ID: UX1
 Description: User Login
 Requirement: ……………….
@@ -349,9 +342,7 @@ Requirement: ……………….
 6.3.3. User Interface Wireframe
 
 ### 6.4 Architecture (Required)
-Describe the overall structure and organization of the software system. Define how
-various components interact, the technologies to be used, and any constraints that must be
-considered during the design phases. Example of Architecture Requirement:
+Describe the overall structure and organization of the software system. Define how various components interact, the technologies to be used, and any constraints that must be considered during the design phases. Example of Architecture Requirement:
 Requirement ID: ARCH1
 Description: Client-Server Architecture
 Requirement: ……………….
@@ -360,9 +351,7 @@ Requirement: ……………….
 6.4.2. ……
 
 ### 6.5 Database (Required)
-Specify at least one Database Management System will be used to store and manage the
-data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity
-Relationship Diagram) of the database schema. Example of a Database Requirement:
+Specify at least one Database Management System will be used to store and manage the data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity Relationship Diagram) of the database schema. Example of a Database Requirement:
 Requirement ID: DB1
 Description: Registration Database
 Requirement: ……………….
@@ -372,9 +361,7 @@ Requirement: ……………….
 6.5.3. Entity Relationship Diagram
 
 ### 6.6 Top-level Classes (Required)
-Design the major top-level classes and their components. Use a free Class Diagram
-Tool to draw the Class Diagram showing classes, their attributes, operations, and
-relationships between them. Example of Top-Level Classes Requirement:
+Design the major top-level classes and their components. Use a free Class Diagram Tool to draw the Class Diagram showing classes, their attributes, operations, and relationships between them. Example of Top-Level Classes Requirement:
 Requirement ID: CLASS1
 Description: User Class
 Requirement: ……………….
@@ -384,9 +371,7 @@ Requirement: ……………….
 6.6.3. Class Diagram
 
 ### 6.7 Data Flow and States (Required)
-Design and show how data will move through the system and how various entities (or
-objects) will transition between different states. Use a free Data Flow Diagram Tool to
-create the Data Flow Diagram. Example of Data Flow and States Requirement:
+Design and show how data will move through the system and how various entities (or objects) will transition between different states. Use a free Data Flow Diagram Tool to create the Data Flow Diagram. Example of Data Flow and States Requirement:
 Requirement ID: DF1
 Description: Users to submit feedback through an online form
 Requirement: ……………….
@@ -396,8 +381,7 @@ Requirement: ……………….
 6.7.3. Data Flow Diagram
 
 ### 6.8 Reports (Required)
-Outlines the reporting capabilities and select at least one type of the reports the project will
-create. Example of Report Requirement:
+Outlines the reporting capabilities and select at least one type of the reports the project will create. Example of Report Requirement:
 Requirement ID: REPORT1
 Description: Sales Performance Report
 Requirement: ………………
@@ -406,13 +390,13 @@ Requirement: ………………
 6.8.2. ……
 
 ### 6.9 Internal Interfaces (Optional)
-Specify how pieces of the application will interact
+Specify how pieces of the application will interact.
 
 ### 6.10 External Interfaces (Optional)
-Specify how the application will interact with other applications and resources
+Specify how the application will interact with other applications and resources.
 
 ### 6.11 Other Outputs (Optional)
-Specify the possible outputs generated by the project
+Specify the possible outputs generated by the project.
 
 ### 6.1. Configuration Data (Optional)
 Specify what data and parameters will be configurable in the configuration page or file.
