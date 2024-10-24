@@ -318,8 +318,8 @@ Requirement ID: SEC1
 Description: User Authentication
 Requirement: The system shall implement …………….
 
-6.1.1. Specification 1
-6.1.2. Specification 2
+* Specification 1
+* Specification 2
 
 ### 6.2 Hardware (Required)
 Specify at least three physical components and infrastructure necessary to support the deployment and operation of the software application. Example of a Hardware Requirement:
@@ -327,9 +327,9 @@ Requirement ID: HW1
 Description: Server Processor
 Requirement: ……………….
 
-6.2.1. Specification 1
-6.2.2. Specification 2
-6.2.3. Specification 3
+* Specification 1
+* Specification 2
+* Specification 3
 
 ### 6.3 User Experience (Required)
 Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
@@ -337,9 +337,9 @@ Requirement ID: UX1
 Description: User Login
 Requirement: ……………….
 
-6.3.1. Specifications
-6.3.2. Specifications
-6.3.3. User Interface Wireframe
+* Specifications
+* Specifications
+* User Interface Wireframe
 
 ### 6.4 Architecture (Required)
 Describe the overall structure and organization of the software system. Define how various components interact, the technologies to be used, and any constraints that must be considered during the design phases. Example of Architecture Requirement:
@@ -347,8 +347,8 @@ Requirement ID: ARCH1
 Description: Client-Server Architecture
 Requirement: ……………….
 
-6.4.1. Specifications
-6.4.2. ……
+* Specifications
+* ……
 
 ### 6.5 Database (Required)
 Specify at least one Database Management System will be used to store and manage the data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity Relationship Diagram) of the database schema. Example of a Database Requirement:
@@ -356,9 +356,9 @@ Requirement ID: DB1
 Description: Registration Database
 Requirement: ……………….
 
-6.5.1. Specifications
-6.5.2. ……
-6.5.3. Entity Relationship Diagram
+* Specifications
+* ……
+* Entity Relationship Diagram
 
 ### 6.6 Top-level Classes (Required)
 Design the major top-level classes and their components. Use a free Class Diagram Tool to draw the Class Diagram showing classes, their attributes, operations, and relationships between them. Example of Top-Level Classes Requirement:
@@ -366,9 +366,9 @@ Requirement ID: CLASS1
 Description: User Class
 Requirement: ……………….
 
-6.6.1. Specifications
-6.6.2. ……
-6.6.3. Class Diagram
+* Specifications
+* ……
+* Class Diagram
 
 ### 6.7 Data Flow and States (Required)
 Design and show how data will move through the system and how various entities (or objects) will transition between different states. Use a free Data Flow Diagram Tool to create the Data Flow Diagram. Example of Data Flow and States Requirement:
@@ -376,9 +376,9 @@ Requirement ID: DF1
 Description: Users to submit feedback through an online form
 Requirement: ……………….
 
-6.7.1. Specifications
-6.7.2. ……
-6.7.3. Data Flow Diagram
+* Specifications
+* ……
+* Data Flow Diagram
 
 ### 6.8 Reports (Required)
 Outlines the reporting capabilities and select at least one type of the reports the project will create. Example of Report Requirement:
@@ -386,8 +386,8 @@ Requirement ID: REPORT1
 Description: Sales Performance Report
 Requirement: ………………
 
-6.8.1. Specification
-6.8.2. ……
+* Specification
+* ……
 
 ### 6.9 Internal Interfaces (Optional)
 Specify how pieces of the application will interact.
