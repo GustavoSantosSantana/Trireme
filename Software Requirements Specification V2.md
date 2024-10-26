@@ -404,6 +404,12 @@ Specify what data and parameters will be configurable in the configuration page 
 ### 6.13 Training (Optional)
 Describe the training plan for the user.
 
+ 1. The user will be asked to sign up for the app and provide their email and make a password for their account setup.
+ 2. A welcome message will be given and users will be told in the message what the app is, why it was made, and what it is meant to do.
+ 3. The user will then be given a small tour of the user interface with each button and field of the interface being temporarily highlighted and a function description.
+ 4. A brief overview of their user profile setup will also be given after the user interface is explained.
+ 5. Contact and help information concerning the app will be displayed for the user at the end of the tour.
+
 ---
 
-## 7. Appendixes (Optional
+## 7. Appendixes (Optional)
