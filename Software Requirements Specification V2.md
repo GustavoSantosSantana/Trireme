@@ -11,7 +11,9 @@
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
 |    2.1    | Gustavo Santos       |           Created and tweaked the document          |       10/22/2024        |
-| x | x | x | x |
+| 2.2 | Patrick Brown | Added training steps | 10/26/2024 |
+| 2.3 | Michael Lowell | Added Security requirements and External Interface requirements | 10/27/2024 |
+| 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
 | x | x | x | x |
 
 ---
