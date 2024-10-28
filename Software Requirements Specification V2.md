@@ -11,7 +11,7 @@
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
 |    2.1    | Gustavo Santos       |           Created and tweaked the document          |       10/22/2024        |
-| x | x | x | x |
+| 2.11 | Patrick Brown | Added 6.13 | 10/26/2024 |
 | x | x | x | x |
 
 ---
