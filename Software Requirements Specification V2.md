@@ -561,7 +561,7 @@ The database for this task management app will store and manage data related to 
 
 **6.5.2 Entity Relationship Diagram:**
 
-![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/ERD_Diagram_v2.png)
+![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/ERD_Diagram_v2.png)
 
 
 ### 6.6 Top-level Classes
@@ -830,7 +830,7 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
 ---
 
 **6.6.2 Class Diagram**
-![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/UML_class_diagram_v2.png)
+![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UML_class_diagram_v2.png)
 
 ---
 
