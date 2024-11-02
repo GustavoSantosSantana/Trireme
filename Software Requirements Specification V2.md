@@ -377,11 +377,11 @@ Requirement: ……………….
 ### 6.5 Database (Required)
 The database for this task management app will store and manage data related to users, tasks, sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
 
-**6.5.1 Requirements for Task Management Database Schema**
+**6.5.1 Requirements for Task Management Database**
 
 ---
 
-**Requirement ID**: **REQ-DB-001**  
+**Requirement ID**: REQ-DB-001
 **Requirement Title**: **User Table Implementation**  
 **Description**: The system shall implement a `USERS` table to store user account information.  
 **Attributes**:
@@ -398,7 +398,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-002**  
+**Requirement ID**: REQ-DB-002
 **Requirement Title**: **Task Table Implementation**  
 **Description**: The system shall implement a `TASKS` parent table to store base information about tasks associated with users.  
 **Attributes**:
@@ -417,7 +417,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-003**  
+**Requirement ID**: EQ-DB-003
 **Requirement Title**: **Due Date Tasks Table Implementation**  
 **Description**: The system shall implement a `DUE_DATE_TASKS` sub-table to store details about tasks with set due dates for completion.  
 **Attributes**:
@@ -430,7 +430,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-004**  
+**Requirement ID**: REQ-DB-004
 **Requirement Title**: **Time Bracket Tasks Table Implementation**  
 **Description**: The system shall implement a `TIME_BRACKET_TASKS` sub-table to store details about tasks with specific time-brackets.  
 **Attributes**:
@@ -444,7 +444,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-005**  
+**Requirement ID**: REQ-DB-005
 **Requirement Title**: **Tags Table Implementation**  
 **Description**: The system shall implement a `TAGS` table to store information about tags used in the application.  
 **Attributes**:
@@ -456,7 +456,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-006**  
+**Requirement ID**: REQ-DB-006
 **Requirement Title**: **Task Tags Table Implementation**  
 **Description**: The system shall implement a `TASK_TAGS` junction table to associate a many-to-many relationshiy of tags and tasks.  
 **Attributes**:
@@ -468,7 +468,7 @@ The database for this task management app will store and manage data related to 
 - Verify that the `TASK_TAGS` table is created with the specified attributes and constraints.
 
 ---
-**Requirement ID**: **REQ-DB-007**  
+**Requirement ID**: REQ-DB-007
 **Requirement Title**: **Goals Table Implementation**  
 **Description**: The system shall implement a `GOALS` parent table to store base information about user-defined goals related to tasks.  
 **Attributes**:
@@ -488,7 +488,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**Requirement ID**: **REQ-DB-008**  
+**Requirement ID**: REQ-DB-008  
 **Requirement Title**: **Task Completion Goals Table Implementation**  
 **Description**: The system shall implement a `TASK_COMPLETION_GOALS` sub-table to track details of task completion goals for users.  
 **Attributes**:
@@ -559,20 +559,167 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-#### Entity Relationship Diagram:
+**6.5.2 Entity Relationship Diagram:**
 
 ![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/ERD_DIagram_v1.png)
 
 
 ### 6.6 Top-level Classes (Required)
 Design the major top-level classes and their components. Use a free Class Diagram Tool to draw the Class Diagram showing classes, their attributes, operations, and relationships between them. Example of Top-Level Classes Requirement:
-Requirement ID: CLASS1
-Description: User Class
-Requirement: ……………….
+Here’s a requirement for the `User` class based on the given attributes and methods:
 
-* Specifications
-* ……
-#### Class Diagram:
+**6.6.1 Requirements For Top-Level Classes:**
+---
+
+**Requirement ID:** CLASS_USER  
+**Description:** User Class  
+**Requirement:**  
+The `User` class shall manage user account information and authentication within the system, with attributes `userID`, `username`, `password`, `email`, and `created_on`. The class shall provide the following functionalities:
+
+1. **User Registration and Authentication:**
+   - The `User` class shall include a `registerUser()` method that creates a new user account, returning a confirmation message upon successful registration.
+   - The `login()` method shall authenticate the user based on `username` and `password`.
+   - The `logout()` method shall log the user out of the system, returning a status message confirming the action.
+
+2. **Account Management:**
+   - The `updateInfo()` method shall allow users to update account details, such as `email` or other personal information, and return a status message confirming the update.
+   - The `updatePass()` method shall allow users to securely update their password.
+   - The `deleteAcct()` method shall remove the user’s account from the system, including all associated data, if applicable.
+
+3. **Access Control:**
+   - `username` and `password` shall be private to ensure secure handling of user credentials.
+   - `userID`, `email`, and `created_on` shall be accessible within the system for account management and user identification purposes.
+
+---
+
+**Requirement ID:** CLASS_INTERFACE  
+**Description:** Task Manager Interface  
+**Requirement:**  
+The `TaskManager` interface shall serve as a central hub for managing tasks, tags, sessions, and goals within the system, supporting core functionalities and returning results in JSON string format where applicable. The class shall include the following methods:
+
+1. **Task Management:**
+   - The `createTask()` method shall allow users to create a new task, returning a JSON string with the details of the newly created task.
+   - The `getTask()` method shall retrieve a specific task by its `taskID`, returning the task details as a JSON string.
+   - The `getAllTasks()` method shall retrieve all tasks associated with the user, returning task data as a JSON string.
+   - The `deleteTask()` method shall delete a specific task by `taskID`, ensuring all related data is removed from the system.
+
+2. **Tag Management:**
+   - The `createTag()` method shall allow users to create a new tag, returning a JSON string with the details of the newly created tag.
+   - The `getAllTags()` method shall retrieve all tags associated with the user, returning tag data as a JSON string.
+   - The `deleteTag()` method shall remove a specific tag by `tagID`, ensuring it is disassociated from all related tasks or sessions.
+
+3. **Session Management:**
+   - The `createSession()` method shall allow users to create a new session, returning a JSON string with the details of the newly created session.
+   - The `getSession()` method shall retrieve a specific session by its `sessionID`, returning the session details as a JSON string.
+   - The `deleteSession()` method shall delete a specific session by `sessionID`, ensuring all related data is removed from the system.
+
+4. **Goal Management:**
+   - The `createGoal()` method shall allow users to set a new goal, returning a JSON string with the details of the newly created goal.
+   - The `deleteGoal()` method shall remove a specific goal by `goalID`, ensuring all associated data and references are cleared.
+
+---
+
+**Requirement ID:** CLASS_TASK  
+**Description:** Abstract Task Class  
+**Requirement:**  
+The `Abstract Task` class shall serve as a base class for different types of tasks (e.g. Due-Date, Time-Bracketed), managing common task attributes and functionalities. It shall include the following components and abstract methods that must be implemented by all subclasses:
+
+1. **Attributes:**
+   - The `taskID` shall uniquely identify each task and be accessible across the system.
+   - The `title` and `description` shall provide task details, accessible via getter methods.
+   - The `taskTags` attribute shall store a list of tags associated with the task for categorization and quick retrieval.
+   - The `priority` attribute shall indicate the urgency or importance of the task, with getter and setter methods for modification.
+   - The `status` attribute shall represent the current state of the task (e.g., "Pending", "In Progress", "Completed"), with getter and setter methods.
+   - The `userID` shall link each task to a specific user.
+   - The `creationDate` shall record the date on which the task was created.
+
+2. **Abstract Methods:**
+   - The `updateTask()` method shall be an abstract method, requiring subclasses to define task-specific update functionality. This method shall return a JSON-formatted string with updated task details.
+   - The `validate()` method shall be an abstract method to validate the task’s attributes, ensuring they meet task-specific requirements before saving or updating.
+
+3. **Tag Management:**
+   - The `addTag(Tag)` method shall allow adding a tag to the `taskTags` list, linking it to the task for filtering or organization.
+   - The `removeTag(Tag)` method shall remove a specified tag from `taskTags`, disassociating it from the task.
+   - The `getTags()` method shall return the current list of tags associated with the task.
+
+4. **Task Details Accessors:**
+   - The `getTitle()` method shall return the task's title.
+   - The `getDesc()` method shall return the task's description.
+   - The `setPriority(priority:str)` and `getPriority()` methods shall allow setting and retrieving the priority level of the task.
+   - The `setStatus(status:str)` and `getStatus()` methods shall allow setting and retrieving the current status of the task.
+
+5. **Completion Management:**
+   - The `markComplete()` method shall privately set the task’s status to "completed" handle any associated goals or database logging and is accessible only within the class or by subclasses. 
+
+---
+
+**Requirement ID:** CLASS_DUE_DATE_TASK  
+**Description:** Due-Date Task Class  
+**Requirement:**  
+
+The `DueDateTask` class shall extend the `Abstract Task` class, adding a due date attribute to represent tasks that have a specific completion deadline. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `dueDate` attribute shall store the deadline date by which the task must be completed, represented as a `date` object.
+
+2. **Abstract Method Implementations:**
+   - The `updateTask()` method shall update task details, including the `dueDate`, and return a JSON-formatted string with updated task information.
+   - The `validate()` method shall enforce that the `dueDate` is a valid date and set according to the requirements of the specific task (e.g., not in the past).
+
+3. **Due Date Accessor:**
+   - The `getDueDate()` method shall retrieve the `dueDate` of the task, returning it as a `date` object.
+
+---
+
+**Requirement ID:** CLASS_TIME_BRACKET_TASK  
+**Description:** Time-Bracket Task Class  
+**Requirement:**  
+
+The `TimeBracketTask` class shall extend the `Abstract Task` class, adding start and end time attributes to represent tasks with defined time intervals. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `startTime` attribute shall store the starting date and time for the task, represented as a `date` object.
+   - The `endTime` attribute shall store the ending date and time for the task, represented as a `date` object.
+
+2. **Abstract Method Implementations:**
+   - The `updateTask()` method shall update task details, including `startTime` and `endTime`, and return a JSON-formatted string with updated task information.
+   - The `validate()` method shall enforce that `startTime` and `endTime` are valid date-time values, with `endTime` occurring after `startTime`.
+
+3. **Time Accessors:**
+   - The `getStart()` method shall retrieve the `startTime` of the task, returning it as a `date` object.
+   - The `getEnd()` method shall retrieve the `endTime` of the task, returning it as a `date` object.
+
+---
+
+**Requirement ID:** CLASS_TAG  
+**Description:** Tag Class  
+**Requirement:**  
+
+The `Tag` class shall manage the tagging system within the application, allowing for the creation and modification of tags that can be associated with tasks and sessions. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `tagID` attribute shall uniquely identify each tag within the system, ensuring that tags can be reliably referenced.
+   - The `name` attribute shall store the name of the tag as a string.
+   - The `color` attribute shall represent the color associated with the tag, stored as a string.
+   - The `creationDate` attribute shall record the date on which the tag was created, providing a timestamp for tracking when tags were added.
+
+2. **Tag Management:**
+   - The `updateTag()` method shall allow for the modification of tag attributes, returning a JSON-formatted string with the updated tag information.
+   
+3. **Name Accessor:**
+   - The `getName()` method shall return the current name of the tag, allowing other components of the application to retrieve tag identifiers.
+
+4. **Color Management:**
+   - The `setColor(color:str)` method shall allow for updating the color attribute of the tag, enabling customization.
+   - The `getColor()` method shall return the current color of the tag.
+
+---
+
+
+
+
+
+**6.6.2 Class Diagram:**
 ![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/UML_class_diagram_v1.png)
 
 ### 6.7 Data Flow and States (Required)
