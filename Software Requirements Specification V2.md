@@ -16,6 +16,7 @@
 | 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
 | 2.3.2 | Patrick Brown | Added testing plans for 6.1 and 6.10 | 10/29/2024 |
 | 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 | 
+| 2.5 | Michael Lowell | Added hardware requirements | 11/2/2024 |
 | x | x | x | x |
 
 ---
@@ -348,9 +349,21 @@ Requirement ID: HW1
 Description: Server Processor
 Requirement: ……………….
 
-* Specification 1
-* Specification 2
-* Specification 3
+Requirement ID: HW1
+Description: Web Hosting
+Requirement: Server Hardware will be rented from Amazon Web Services.
+
+Requirement ID: HW2
+Description: Database systems
+Requirement: Database Hardware will be rented from Amazon Web Services.
+
+Requirement ID: HW3
+Description: Development Environment
+Requirement: Digital workspaces will be procured for each member of the development team. 
+
+Requirement ID: HW4
+Description: Deployment Test Platforms
+Requirement: Devices corresponding to expected user hardware will be procured. Such devices will include: current gen mobile phones running both IOS and Droid systems, modern consumer-grade laptop, older gen mobile phones running both IOS and Droid systems, tablet computers.
 
 ### 6.3 User Experience (Required)
 Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
