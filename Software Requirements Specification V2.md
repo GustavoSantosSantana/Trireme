@@ -375,9 +375,9 @@ Requirement: ……………….
 * ……
 
 ### 6.5 Database (Required)
-Based on the provided schema for the task management application, here’s a comprehensive set of requirements that outline the functionality, constraints, and acceptance criteria for each table and its attributes.
+The database for this task management app will store and manage data related to users, tasks, sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
 
-### Requirements for Task Management Database Schema
+**6.5.1 Requirements for Task Management Database Schema**
 
 ---
 
@@ -400,7 +400,7 @@ Based on the provided schema for the task management application, here’s a com
 
 **Requirement ID**: **REQ-DB-002**  
 **Requirement Title**: **Task Table Implementation**  
-**Description**: The system shall implement a `TASKS` table to store tasks associated with users.  
+**Description**: The system shall implement a `TASKS` parent table to store base information about tasks associated with users.  
 **Attributes**:
 - `task_id` (INT, PRIMARY KEY): Unique identifier for each task.
 - `title` (VARCHAR(20), NOT NULL): The title of the task.
@@ -419,9 +419,10 @@ Based on the provided schema for the task management application, here’s a com
 
 **Requirement ID**: **REQ-DB-003**  
 **Requirement Title**: **Due Date Tasks Table Implementation**  
-**Description**: The system shall implement a `DUE_DATE_TASKS` table to store due dates for tasks.  
+**Description**: The system shall implement a `DUE_DATE_TASKS` sub-table to store details about tasks with set due dates for completion.  
 **Attributes**:
-- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated due date.  
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated due date.
+- `due_date` (DATETIME, NOT NULL): The scheduled due date for this task.
 **Constraints**:
 - `task_id` must reference a valid `task_id` in the `TASKS` table.  
 **Acceptance Criteria**:
@@ -431,9 +432,11 @@ Based on the provided schema for the task management application, here’s a com
 
 **Requirement ID**: **REQ-DB-004**  
 **Requirement Title**: **Time Bracket Tasks Table Implementation**  
-**Description**: The system shall implement a `TIME_BRACKET_TASKS` table to store time intervals for tasks.  
+**Description**: The system shall implement a `TIME_BRACKET_TASKS` sub-table to store details about tasks with specific time-brackets.  
 **Attributes**:
-- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated time bracket.  
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated time bracket.
+- `start_time` (DATETIME, NOT NULL): The scheduled start time for the time-bracketed task.
+- `end_time` (DATETIME, NOT NULL): The scheduled end time for the time-bracket task.
 **Constraints**:
 - `task_id` must reference a valid `task_id` in the `TASKS` table.  
 **Acceptance Criteria**:
@@ -442,19 +445,6 @@ Based on the provided schema for the task management application, here’s a com
 ---
 
 **Requirement ID**: **REQ-DB-005**  
-**Requirement Title**: **Task Tags Table Implementation**  
-**Description**: The system shall implement a `TASK_TAGS` table to associate tags with tasks.  
-**Attributes**:
-- `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag-task association.
-- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task associated with a tag.  
-**Constraints**:
-- `task_id` must reference a valid `task_id` in the `TASKS` table.  
-**Acceptance Criteria**:
-- Verify that the `TASK_TAGS` table is created with the specified attributes and constraints.
-
----
-
-**Requirement ID**: **REQ-DB-006**  
 **Requirement Title**: **Tags Table Implementation**  
 **Description**: The system shall implement a `TAGS` table to store information about tags used in the application.  
 **Attributes**:
@@ -466,26 +456,26 @@ Based on the provided schema for the task management application, here’s a com
 
 ---
 
-**Requirement ID**: **REQ-DB-007**  
-**Requirement Title**: **Task Completion Goals Table Implementation**  
-**Description**: The system shall implement a `TASK_COMPLETION_GOALS` table to track task completion goals for users.  
+**Requirement ID**: **REQ-DB-006**  
+**Requirement Title**: **Task Tags Table Implementation**  
+**Description**: The system shall implement a `TASK_TAGS` junction table to associate a many-to-many relationshiy of tags and tasks.  
 **Attributes**:
-- `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
-- `target_count` (INT): The target number of tasks to complete.
-- `completed_task_count` (INT): The current count of completed tasks.  
+- `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag-task association.
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task associated with a tag.  
+**Constraints**:
+- `task_id` must reference a valid `task_id` in the `TASKS` table.  
 **Acceptance Criteria**:
-- Verify that the `TASK_COMPLETION_GOALS` table is created with the specified attributes.
+- Verify that the `TASK_TAGS` table is created with the specified attributes and constraints.
 
 ---
-
-**Requirement ID**: **REQ-DB-008**  
+**Requirement ID**: **REQ-DB-007**  
 **Requirement Title**: **Goals Table Implementation**  
-**Description**: The system shall implement a `GOALS` table to store user-defined goals related to tasks.  
+**Description**: The system shall implement a `GOALS` parent table to store base information about user-defined goals related to tasks.  
 **Attributes**:
 - `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
 - `tag_id` (INT, FOREIGN KEY): The identifier for the associated tag.
 - `description` (VARCHAR(140)): A description of the goal.
-- `goal_type` (VARCHAR(20)): The type of the goal (e.g., Completion, Time-based).
+- `goal_type` (VARCHAR(20)): The type of the goal (e.g., Due-Date, Time-Bracket).
 - `is_completed` (BOOLEAN): Indicates whether the goal has been completed.
 - `time_frame` (VARCHAR(10)): The time frame for the goal (e.g., Daily, Weekly).
 - `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the goal.
@@ -498,7 +488,31 @@ Based on the provided schema for the task management application, here’s a com
 
 ---
 
+**Requirement ID**: **REQ-DB-008**  
+**Requirement Title**: **Task Completion Goals Table Implementation**  
+**Description**: The system shall implement a `TASK_COMPLETION_GOALS` sub-table to track details of task completion goals for users.  
+**Attributes**:
+- `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
+- `target_count` (INT): The target number of tasks to complete.
+- `completed_task_count` (INT): The current count of completed tasks.  
+**Acceptance Criteria**:
+- Verify that the `TASK_COMPLETION_GOALS` table is created with the specified attributes.
+
+---
+
 **Requirement ID**: **REQ-DB-009**  
+**Requirement Title**: **Session Goals Table Implementation**  
+**Description**: The system shall implement a `SESSION_GOALS` sub-table to track details of goals related to user sessions.  
+**Attributes**:
+- `goal_id` (INT, PRIMARY KEY): Unique identifier for each session goal.
+- `target_duration` (INT): The target duration for the session goal in minutes.
+- `completed_duration` (INT): The current duration that has been completed.  
+**Acceptance Criteria**:
+- Verify that the `SESSION_GOALS` table is created with the specified attributes.
+
+---
+
+**Requirement ID**: **REQ-DB-010**  
 **Requirement Title**: **Sessions Table Implementation**  
 **Description**: The system shall implement a `SESSIONS` table to track user work sessions.  
 **Attributes**:
@@ -517,7 +531,7 @@ Based on the provided schema for the task management application, here’s a com
 
 ---
 
-**Requirement ID**: **REQ-DB-010**  
+**Requirement ID**: **REQ-DB-011**  
 **Requirement Title**: **Session Tags Table Implementation**  
 **Description**: The system shall implement a `SESSION_TAGS` table to associate tags with user sessions.  
 **Attributes**:
@@ -531,7 +545,7 @@ Based on the provided schema for the task management application, here’s a com
 
 ---
 
-**Requirement ID**: **REQ-DB-011**  
+**Requirement ID**: **REQ-DB-012**  
 **Requirement Title**: **Session Log Table Implementation**  
 **Description**: The system shall implement a `SESSION_LOG` table to log the start and end times of user sessions.  
 **Attributes**:
@@ -542,18 +556,6 @@ Based on the provided schema for the task management application, here’s a com
 - `session_id` must reference a valid `session_id` in the `SESSIONS` table.  
 **Acceptance Criteria**:
 - Verify that the `SESSION_LOG` table is created with the specified attributes and constraints.
-
----
-
-**Requirement ID**: **REQ-DB-012**  
-**Requirement Title**: **Session Goals Table Implementation**  
-**Description**: The system shall implement a `SESSION_GOALS` table to track goals related to user sessions.  
-**Attributes**:
-- `goal_id` (INT, PRIMARY KEY): Unique identifier for each session goal.
-- `target_duration` (INT): The target duration for the session goal in minutes.
-- `completed_duration` (INT): The current duration that has been completed.  
-**Acceptance Criteria**:
-- Verify that the `SESSION_GOALS` table is created with the specified attributes.
 
 ---
 
