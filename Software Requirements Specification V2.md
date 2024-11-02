@@ -15,7 +15,10 @@
 | 2.3 | Michael Lowell | Added Security requirements and External Interface requirements | 10/27/2024 |
 | 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
 | 2.3.2 | Patrick Brown | Added testing plans for 6.1 and 6.10 | 10/29/2024 |
-| 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 | 
+| 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 |
+| 2.4.1 |  John Diveris  | Added Database Requirements | 11/1/2024 |
+| 2.5 | John Diveris | Added Class Diagram | 11/1/2024  |
+
 | x | x | x | x |
 
 ---
@@ -372,13 +375,187 @@ Requirement: ……………….
 * ……
 
 ### 6.5 Database (Required)
-Specify at least one Database Management System will be used to store and manage the data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity Relationship Diagram) of the database schema. Example of a Database Requirement:
-Requirement ID: DB1
-Description: Registration Database
-Requirement: ……………….
+Based on the provided schema for the task management application, here’s a comprehensive set of requirements that outline the functionality, constraints, and acceptance criteria for each table and its attributes.
 
-* Specifications
-* ……
+### Requirements for Task Management Database Schema
+
+---
+
+**Requirement ID**: **REQ-DB-001**  
+**Requirement Title**: **User Table Implementation**  
+**Description**: The system shall implement a `USERS` table to store user account information.  
+**Attributes**:
+- `user_id` (INT, PRIMARY KEY): Unique identifier for each user.
+- `username` (VARCHAR(20), UNIQUE, NOT NULL): The username of the user.
+- `password` (PASSWORD, NOT NULL): The hashed password of the user.
+- `email` (EMAIL, UNIQUE, NOT NULL): The email address of the user.
+- `created_on` (TIMESTAMP, NOT NULL): The timestamp when the user account was created.  
+**Constraints**:
+- The `username` and `email` must be unique across all records.  
+**Acceptance Criteria**:
+- Verify that the `USERS` table is created with the specified attributes and constraints.
+- Ensure that unique constraints for `username` and `email` are enforced.
+
+---
+
+**Requirement ID**: **REQ-DB-002**  
+**Requirement Title**: **Task Table Implementation**  
+**Description**: The system shall implement a `TASKS` table to store tasks associated with users.  
+**Attributes**:
+- `task_id` (INT, PRIMARY KEY): Unique identifier for each task.
+- `title` (VARCHAR(20), NOT NULL): The title of the task.
+- `description` (VARCHAR(140), NOT NULL): The description of the task.
+- `priority` (VARCHAR(10)): The priority level of the task (e.g., Low, Medium, High).
+- `status` (VARCHAR(12)): The current status of the task (e.g., Pending, In Progress, Completed).
+- `task_type` (VARCHAR(20)): The type of the task (e.g., Due Date, Time Bracket).
+- `created_on` (TIMESTAMP, NOT NULL): The timestamp when the task was created.
+- `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the task.  
+**Constraints**:
+- `user_id` must reference a valid `user_id` in the `USERS` table.  
+**Acceptance Criteria**:
+- Verify that the `TASKS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-003**  
+**Requirement Title**: **Due Date Tasks Table Implementation**  
+**Description**: The system shall implement a `DUE_DATE_TASKS` table to store due dates for tasks.  
+**Attributes**:
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated due date.  
+**Constraints**:
+- `task_id` must reference a valid `task_id` in the `TASKS` table.  
+**Acceptance Criteria**:
+- Verify that the `DUE_DATE_TASKS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-004**  
+**Requirement Title**: **Time Bracket Tasks Table Implementation**  
+**Description**: The system shall implement a `TIME_BRACKET_TASKS` table to store time intervals for tasks.  
+**Attributes**:
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated time bracket.  
+**Constraints**:
+- `task_id` must reference a valid `task_id` in the `TASKS` table.  
+**Acceptance Criteria**:
+- Verify that the `TIME_BRACKET_TASKS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-005**  
+**Requirement Title**: **Task Tags Table Implementation**  
+**Description**: The system shall implement a `TASK_TAGS` table to associate tags with tasks.  
+**Attributes**:
+- `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag-task association.
+- `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task associated with a tag.  
+**Constraints**:
+- `task_id` must reference a valid `task_id` in the `TASKS` table.  
+**Acceptance Criteria**:
+- Verify that the `TASK_TAGS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-006**  
+**Requirement Title**: **Tags Table Implementation**  
+**Description**: The system shall implement a `TAGS` table to store information about tags used in the application.  
+**Attributes**:
+- `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag.
+- `name` (VARCHAR): The name of the tag.
+- `color_hex` (VARCHAR): The color representation of the tag in hexadecimal format.  
+**Acceptance Criteria**:
+- Verify that the `TAGS` table is created with the specified attributes.
+
+---
+
+**Requirement ID**: **REQ-DB-007**  
+**Requirement Title**: **Task Completion Goals Table Implementation**  
+**Description**: The system shall implement a `TASK_COMPLETION_GOALS` table to track task completion goals for users.  
+**Attributes**:
+- `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
+- `target_count` (INT): The target number of tasks to complete.
+- `completed_task_count` (INT): The current count of completed tasks.  
+**Acceptance Criteria**:
+- Verify that the `TASK_COMPLETION_GOALS` table is created with the specified attributes.
+
+---
+
+**Requirement ID**: **REQ-DB-008**  
+**Requirement Title**: **Goals Table Implementation**  
+**Description**: The system shall implement a `GOALS` table to store user-defined goals related to tasks.  
+**Attributes**:
+- `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
+- `tag_id` (INT, FOREIGN KEY): The identifier for the associated tag.
+- `description` (VARCHAR(140)): A description of the goal.
+- `goal_type` (VARCHAR(20)): The type of the goal (e.g., Completion, Time-based).
+- `is_completed` (BOOLEAN): Indicates whether the goal has been completed.
+- `time_frame` (VARCHAR(10)): The time frame for the goal (e.g., Daily, Weekly).
+- `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the goal.
+- `created_on` (TIMESTAMP, NOT NULL): The timestamp when the goal was created.  
+**Constraints**:
+- `tag_id` must reference a valid `tag_id` in the `TAGS` table.
+- `user_id` must reference a valid `user_id` in the `USERS` table.  
+**Acceptance Criteria**:
+- Verify that the `GOALS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-009**  
+**Requirement Title**: **Sessions Table Implementation**  
+**Description**: The system shall implement a `SESSIONS` table to track user work sessions.  
+**Attributes**:
+- `session_id` (INT, PRIMARY KEY): Unique identifier for each session.
+- `description` (VARCHAR(20)): A brief description of the session.
+- `status` (VARCHAR(12)): The current status of the session (e.g., Active, Completed).
+- `start_time` (DATE): The start date of the session.
+- `end_time` (DATE): The end date of the session.
+- `duration` (INT): The total duration of the session in minutes.
+- `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the session.
+- `created_on` (TIMESTAMP, NOT NULL): The timestamp when the session was created.  
+**Constraints**:
+- `user_id` must reference a valid `user_id` in the `USERS` table.  
+**Acceptance Criteria**:
+- Verify that the `SESSIONS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-010**  
+**Requirement Title**: **Session Tags Table Implementation**  
+**Description**: The system shall implement a `SESSION_TAGS` table to associate tags with user sessions.  
+**Attributes**:
+- `session_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the session.
+- `tag_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the associated tag.  
+**Constraints**:
+- `session_id` must reference a valid `session_id` in the `SESSIONS` table.
+- `tag_id` must reference a valid `tag_id` in the `TAGS` table.  
+**Acceptance Criteria**:
+- Verify that the `SESSION_TAGS` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-011**  
+**Requirement Title**: **Session Log Table Implementation**  
+**Description**: The system shall implement a `SESSION_LOG` table to log the start and end times of user sessions.  
+**Attributes**:
+- `session_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the session.
+- `start_time` (TIMESTAMP, PRIMARY KEY): The start time of the session.
+- `end_time` (TIMESTAMP): The end time of the session.  
+**Constraints**:
+- `session_id` must reference a valid `session_id` in the `SESSIONS` table.  
+**Acceptance Criteria**:
+- Verify that the `SESSION_LOG` table is created with the specified attributes and constraints.
+
+---
+
+**Requirement ID**: **REQ-DB-012**  
+**Requirement Title**: **Session Goals Table Implementation**  
+**Description**: The system shall implement a `SESSION_GOALS` table to track goals related to user sessions.  
+**Attributes**:
+- `goal_id` (INT, PRIMARY KEY): Unique identifier for each session goal.
+- `target_duration` (INT): The target duration for the session goal in minutes.
+- `completed_duration` (INT): The current duration that has been completed.  
+**Acceptance Criteria**:
+- Verify that the `SESSION_GOALS` table is created with the specified attributes.
+
+---
 
 #### Entity Relationship Diagram:
 
