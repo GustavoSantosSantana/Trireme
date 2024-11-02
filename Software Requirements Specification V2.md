@@ -393,7 +393,8 @@ Requirement: ……………….
 
 * Specifications
 * ……
-* Class Diagram
+#### Class Diagram:
+![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/UML_class_diagram_v1.png)
 
 ### 6.7 Data Flow and States (Required)
 Design and show how data will move through the system and how various entities (or objects) will transition between different states. Use a free Data Flow Diagram Tool to create the Data Flow Diagram. Example of Data Flow and States Requirement:
