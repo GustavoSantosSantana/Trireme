@@ -380,7 +380,8 @@ Requirement: ……………….
 * Specifications
 * ……
 
-**Entity Relationship Diagram**<br>
+#### Entity Relationship Diagram:
+
 ![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/ERD_DIagram_v1.png)
 
 
