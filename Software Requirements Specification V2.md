@@ -15,6 +15,7 @@
 | 2.3 | Michael Lowell | Added Security requirements and External Interface requirements | 10/27/2024 |
 | 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
 | 2.3.2 | Patrick Brown | Added testing plans for 6.1 and 6.10 | 10/29/2024 |
+| 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 | 
 | x | x | x | x |
 
 ---
@@ -378,7 +379,10 @@ Requirement: ……………….
 
 * Specifications
 * ……
-* Entity Relationship Diagram
+
+**Entity Relationship Diagram**<br>
+![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/ERD_DIagram_v1.png)
+
 
 ### 6.6 Top-level Classes (Required)
 Design the major top-level classes and their components. Use a free Class Diagram Tool to draw the Class Diagram showing classes, their attributes, operations, and relationships between them. Example of Top-Level Classes Requirement:
