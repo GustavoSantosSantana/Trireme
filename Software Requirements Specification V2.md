@@ -10,7 +10,7 @@
 
 | Version | Primary Author(s) | Description of Version | Date Completed |
 |---------|-------------------|------------------------|----------------|
-|    2.1    | Gustavo Santos       |           Created and tweaked the document          |       10/22/2024        |
+| 2.1 | Gustavo Santos | Created and tweaked the document | 10/22/2024 |
 | 2.2 | Patrick Brown | Added training steps | 10/26/2024 |
 | 2.3 | Michael Lowell | Added Security requirements and External Interface requirements | 10/27/2024 |
 | 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
@@ -18,7 +18,10 @@
 | 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 |
 | 2.4.1 |  John Diveris  | Added Database Requirements | 11/1/2024 |
 | 2.5 | John Diveris | Added Class Diagram | 11/1/2024  |
-
+| 2.6 | Michael Lowell | Added hardware requirements | 11/2/2024 |
+| 2.6.1 | Michael Lowell | Updated hardware requirements | 11/3/2024 |
+| 2.7 | Michael Lowell | Added architecture requirements | 11/3/2024 |
+| 2.8 | Michael Lowell | Added internal interface requirements | 11/3/2024 |
 | x | x | x | x |
 
 ---
@@ -27,8 +30,8 @@
 
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
-| x | x | x | x |
-| x | x | x | x |
+| Gustavo Santos | 2.1-2.3 | 10/27/2024 |
+| x | x | x |
 
 ---
 
@@ -346,14 +349,22 @@ Describe the attributes, qualities, and constraints of the application that are 
   **Testing:**  This will be tested with Python integration  testing by creating a secure token via the app and attempting to brute force the token's id.
 
 ### 6.2 Hardware (Required)
-Specify at least three physical components and infrastructure necessary to support the deployment and operation of the software application. Example of a Hardware Requirement:
-Requirement ID: HW1
-Description: Server Processor
-Requirement: ……………….
 
-* Specification 1
-* Specification 2
-* Specification 3
+* **Requirement ID:** HW1
+  **Description:** Web Hosting
+  **Requirement:** Server Hardware will be rented from a cloud hosting service. We will rent the servers from Amazon Web Services, choosing the m5ad.2xlarge package.
+
+* **Requirement ID:** HW2
+  **Description:** Database systems
+  **Requirement:** Database Hardware will be rented from the same web host as above.
+
+* **Requirement ID:** HW3
+  **Description:** Development Environment
+  **Requirement:** Digital workspaces will be procured for each member of the development team. Each member will be provided with a desktop PC with a monitor, keyboard, and mouse. Graphics designers will be provided with additional GPU power to facilitate graphics rendering. Programmers will be provided with an additional monitor to facilitate reference lookups and a rubber duck to facilitate debugging.
+
+* **Requirement ID:** HW4
+  **Description:** Deployment Test Platforms
+  **Requirement:** Devices corresponding to expected user hardware will be procured. Such devices will include: current gen mobile phones running both IOS (v18.1) and Droid (v15) systems, modern consumer-grade laptop, older gen mobile phones running both IOS and Droid systems, tablet computers.
 
 ### 6.3 User Experience (Required)
 Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
@@ -371,8 +382,9 @@ Requirement ID: ARCH1
 Description: Client-Server Architecture
 Requirement: ……………….
 
-* Specifications
-* ……
+* **Requirement ID:** ARCH1
+  **Description:** Client-Server Architecture
+  **Requirement:** The system will implement a Client-Server architecture, with the servers being hosted by a cloud hosting service.
 
 ### 6.5 Database 
 The database for this task management app will store and manage data related to users, tasks, work-sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
@@ -857,10 +869,19 @@ Requirement: ………………
 * ……
 
 ### 6.9 Internal Interfaces (Optional)
-Specify how pieces of the application will interact.
+* **Requirement ID:** IxI-1
+
+  **Description:** Network interface
+
+  **Requirement:** The client will interface with the server to synchronize user data and user preferences.
+  
+* **Requirement ID:** IxI-2
+
+  **Description:** Data interface
+
+  **Requirement:** The server will interface with the database to store and retrieve data.
 
 ### 6.10 External Interfaces (Optional)
-Specify how the application will interact with other applications and resources.
 
 * **Requirement ID:** ExI-1
 
