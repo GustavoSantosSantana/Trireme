@@ -940,9 +940,6 @@ Requirement: ………………
 - **Format**: User-defined format, typically a table with selectable fields and optional chart visualizations.
 - **Intended Audience**: General users, administrators, and managers who need to generate ad-hoc reports based on specific criteria.
 
----
-
-These reports are generated through the **Reports Section** in the dashboard, where users can select desired report types, specify parameters, and view or export the reports. Each report’s accessibility is governed by user permissions, ensuring that sensitive data remains secure and only accessible to authorized users.
 
 ### 6.9 Internal Interfaces (Optional)
 * **Requirement ID:** IxI-1
