@@ -17,6 +17,9 @@
 | 2.3.2 | Patrick Brown | Added testing plans for 6.1 and 6.10 | 10/29/2024 |
 | 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 | 
 | 2.5 | Michael Lowell | Added hardware requirements | 11/2/2024 |
+| 2.5.1 | Michael Lowell | Updated hardware requirements | 11/3/2024 |
+| 2.6 | Michael Lowell | Added architecture requirements | 11/3/2024 |
+| 2.7 | Michael Lowell | Added internal interface requirements | 11/3/2024 |
 | x | x | x | x |
 
 ---
@@ -344,26 +347,22 @@ Describe the attributes, qualities, and constraints of the application that are 
   **Testing:**  This will be tested with Python integration  testing by creating a secure token via the app and attempting to brute force the token's id.
 
 ### 6.2 Hardware (Required)
-Specify at least three physical components and infrastructure necessary to support the deployment and operation of the software application. Example of a Hardware Requirement:
-Requirement ID: HW1
-Description: Server Processor
-Requirement: ……………….
 
-Requirement ID: HW1
-Description: Web Hosting
-Requirement: Server Hardware will be rented from Amazon Web Services.
+* **Requirement ID:** HW1
+  **Description:** Web Hosting
+  **Requirement:** Server Hardware will be rented from a cloud hosting service. We will rent the servers from Amazon Web Services, choosing the m5ad.2xlarge package.
 
-Requirement ID: HW2
-Description: Database systems
-Requirement: Database Hardware will be rented from Amazon Web Services.
+* **Requirement ID:** HW2
+  **Description:** Database systems
+  **Requirement:** Database Hardware will be rented from the same web host as above.
 
-Requirement ID: HW3
-Description: Development Environment
-Requirement: Digital workspaces will be procured for each member of the development team. 
+* **Requirement ID:** HW3
+  **Description:** Development Environment
+  **Requirement:** Digital workspaces will be procured for each member of the development team. Each member will be provided with a desktop PC with a monitor, keyboard, and mouse. Graphics designers will be provided with additional GPU power to facilitate graphics rendering. Programmers will be provided with an additional monitor to facilitate reference lookups and a rubber duck to facilitate debugging.
 
-Requirement ID: HW4
-Description: Deployment Test Platforms
-Requirement: Devices corresponding to expected user hardware will be procured. Such devices will include: current gen mobile phones running both IOS and Droid systems, modern consumer-grade laptop, older gen mobile phones running both IOS and Droid systems, tablet computers.
+* **Requirement ID:** HW4
+  **Description:** Deployment Test Platforms
+  **Requirement:** Devices corresponding to expected user hardware will be procured. Such devices will include: current gen mobile phones running both IOS (v18.1) and Droid (v15) systems, modern consumer-grade laptop, older gen mobile phones running both IOS and Droid systems, tablet computers.
 
 ### 6.3 User Experience (Required)
 Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
@@ -381,8 +380,9 @@ Requirement ID: ARCH1
 Description: Client-Server Architecture
 Requirement: ……………….
 
-* Specifications
-* ……
+* **Requirement ID:** ARCH1
+  **Description:** Client-Server Architecture
+  **Requirement:** The system will implement a Client-Server architecture, with the servers being hosted by a cloud hosting service.
 
 ### 6.5 Database (Required)
 Specify at least one Database Management System will be used to store and manage the data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity Relationship Diagram) of the database schema. Example of a Database Requirement:
@@ -428,10 +428,19 @@ Requirement: ………………
 * ……
 
 ### 6.9 Internal Interfaces (Optional)
-Specify how pieces of the application will interact.
+* **Requirement ID:** IxI-1
+
+  **Description:** Network interface
+
+  **Requirement:** The client will interface with the server to synchronize user data and user preferences.
+  
+* **Requirement ID:** IxI-2
+
+  **Description:** Data interface
+
+  **Requirement:** The server will interface with the database to store and retrieve data.
 
 ### 6.10 External Interfaces (Optional)
-Specify how the application will interact with other applications and resources.
 
 * **Requirement ID:** ExI-1
 
