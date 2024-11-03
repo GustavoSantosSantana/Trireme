@@ -377,7 +377,15 @@ Requirement: ……………….
 ### 6.5 Database 
 The database for this task management app will store and manage data related to users, tasks, work-sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
 
-**6.5.1 Requirements for Task Management Database**
+---
+
+**6.5.1 Entity Relationship Diagram:**
+
+![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/ERD_Diagram_v2.png)
+
+---
+
+**6.5.2 Requirements for Task Management Database**
 
 ---
 
@@ -557,16 +565,16 @@ The database for this task management app will store and manage data related to 
 1. **Acceptance Criteria**:
    - Verify that the `WORK_SESSION_LOG` table is created with the specified fields and constraints.
 
----
-
-**6.5.2 Entity Relationship Diagram:**
-
-![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/ERD_Diagram_v2.png)
-
 
 ### 6.6 Top-level Classes
 
-**6.6.1 Requirements For Top-Level Classes:**
+
+**6.6.1 Class Diagram**
+![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UML_class_diagram_v2.png)
+
+---
+
+**6.6.2 Requirements For Top-Level Classes:**
 ---
 
 **Requirement ID:** CLASS_USER  
@@ -826,11 +834,6 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
    - The `getDuration()` method shall retrieve the total duration of the work-session as an integer.
    - The `getStartTime()` method shall return the start time of the work-session as a date object.
    - The `getEndTime()` method shall return the end time of the work-session as a date object.
-
----
-
-**6.6.2 Class Diagram**
-![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UML_class_diagram_v2.png)
 
 ---
 
