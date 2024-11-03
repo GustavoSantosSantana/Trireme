@@ -15,7 +15,10 @@
 | 2.3 | Michael Lowell | Added Security requirements and External Interface requirements | 10/27/2024 |
 | 2.3.1 | Michael Lowell | Added revision markup | 10/28/2024 |
 | 2.3.2 | Patrick Brown | Added testing plans for 6.1 and 6.10 | 10/29/2024 |
-| 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 | 
+| 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 |
+| 2.4.1 |  John Diveris  | Added Database Requirements | 11/1/2024 |
+| 2.5 | John Diveris | Added Class Diagram | 11/1/2024  |
+
 | x | x | x | x |
 
 ---
@@ -371,29 +374,468 @@ Requirement: ……………….
 * Specifications
 * ……
 
-### 6.5 Database (Required)
-Specify at least one Database Management System will be used to store and manage the data for the project. Use a free Database Diagram Design Tool to design the ERD (Entity Relationship Diagram) of the database schema. Example of a Database Requirement:
-Requirement ID: DB1
-Description: Registration Database
-Requirement: ……………….
+### 6.5 Database 
+The database for this task management app will store and manage data related to users, tasks, work-sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
 
-* Specifications
-* ……
+---
 
-#### Entity Relationship Diagram:
+**6.5.1 Entity Relationship Diagram:**
 
-![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/diveris-working-branch/Images/ERD_DIagram_v1.png)
+![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/ERD_Diagram_v2.png)
+
+---
+
+**6.5.2 Requirements for Task Management Database**
+
+---
+
+**Requirement ID**: REQ-DB-001   
+**Requirement Title**: User Table Implementation  
+**Description**: The system shall implement a `USERS` table to store user account information.  
+1. **Fields**:
+   - `user_id` (INT, PRIMARY KEY): Unique identifier for each user.
+   - `username` (VARCHAR(20), UNIQUE, NOT NULL): The username of the user.
+   - `password` (PASSWORD, NOT NULL): The hashed password of the user.
+   - `email` (EMAIL, UNIQUE, NOT NULL): The email address of the user.
+   - `created_on` (TIMESTAMP, NOT NULL): The timestamp when the user account was created.  
+1. **Constraints**:
+   - The `username` and `email` must be unique across all records.  
+1. **Acceptance Criteria**:
+   - Verify that the `USERS` table is created with the specified fields and constraints.
+   - Ensure that unique constraints for `username` and `email` are enforced.
+
+---
+
+**Requirement ID**: REQ-DB-002   
+**Requirement Title**: Task Table Implementation  
+**Description**: The system shall implement a `TASKS` parent table to store base information about tasks associated with users.  
+1. **Fields**:
+   - `task_id` (INT, PRIMARY KEY): Unique identifier for each task.
+   - `title` (VARCHAR(20), NOT NULL): The title of the task.
+   - `description` (VARCHAR(140), NOT NULL): The description of the task.
+   - `priority` (VARCHAR(10)): The priority level of the task (e.g., Low, Medium, High).
+   - `status` (VARCHAR(12)): The current status of the task (e.g., Pending, In Progress, Completed).
+   - `task_type` (VARCHAR(20)): The type of the task (e.g., Due Date, Time Bracket).
+   - `created_on` (TIMESTAMP, NOT NULL): The timestamp when the task was created.
+   - `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the task.  
+1. **Constraints**:
+   - `user_id` must reference a valid `user_id` in the `USERS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `TASKS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: EQ-DB-003    
+**Requirement Title**: Due Date Tasks Table Implementation  
+**Description**: The system shall implement a `DUE_DATE_TASKS` sub-table to store details about tasks with set due dates for completion.  
+1. **Fields**:
+   - `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated due date.
+   - `due_date` (DATETIME, NOT NULL): The scheduled due date for this task.
+1. **Constraints**:
+   - `task_id` must reference a valid `task_id` in the `TASKS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `DUE_DATE_TASKS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: REQ-DB-004   
+**Requirement Title**: Time Bracket Tasks Table Implementation  
+**Description**: The system shall implement a `TIME_BRACKET_TASKS` sub-table to store details about tasks with specific time-brackets.  
+1. **Fields**:
+   - `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task with an associated time bracket.
+   - `start_time` (DATETIME, NOT NULL): The scheduled start time for the time-bracketed task.
+   - `end_time` (DATETIME, NOT NULL): The scheduled end time for the time-bracket task.
+1. **Constraints**:
+   - `task_id` must reference a valid `task_id` in the `TASKS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `TIME_BRACKET_TASKS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: REQ-DB-005   
+**Requirement Title**: Tags Table Implementation  
+**Description**: The system shall implement a `TAGS` table to store information about tags used in the application.  
+1. **Fields**:
+   - `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag.
+   - `name` (VARCHAR): The name of the tag.
+   - `color_hex` (VARCHAR): The color representation of the tag in hexadecimal format.  
+1. **Acceptance Criteria**:
+   - Verify that the `TAGS` table is created with the specified fields.
+
+---
+
+**Requirement ID**: REQ-DB-006   
+**Requirement Title**: Task Tags Table Implementation  
+**Description**: The system shall implement a `TASK_TAGS` junction table to associate a many-to-many relationshiy of tags and tasks.  
+1. **Fields**:
+   - `tag_id` (INT, PRIMARY KEY): Unique identifier for each tag-task association.
+   - `task_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the task associated with a tag.  
+1. **Constraints**:
+   - `task_id` must reference a valid `task_id` in the `TASKS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `TASK_TAGS` table is created with the specified fields and constraints.
+
+---
+**Requirement ID**: REQ-DB-007   
+**Requirement Title**: Goals Table Implementation  
+**Description**: The system shall implement a `GOALS` parent table to store base information about user-defined goals related to tasks.  
+1. **Fields**:
+   - `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
+   - `tag_id` (INT, FOREIGN KEY): The identifier for the associated tag.
+   - `description` (VARCHAR(140)): A description of the goal.
+   - `goal_type` (VARCHAR(20)): The type of the goal (e.g., Due-Date, Time-Bracket).
+   - `is_completed` (BOOLEAN): Indicates whether the goal has been completed.
+   - `time_frame` (VARCHAR(10)): The time frame for the goal (e.g., Daily, Weekly).
+   - `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the goal.
+   - `created_on` (TIMESTAMP, NOT NULL): The timestamp when the goal was created.  
+1. **Constraints**:
+   - `tag_id` must reference a valid `tag_id` in the `TAGS` table.
+   - `user_id` must reference a valid `user_id` in the `USERS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `GOALS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: REQ-DB-008   
+**Requirement Title**: Task Completion Goals Table Implementation  
+**Description**: The system shall implement a `TASK_COMPLETION_GOALS` sub-table to track details of task completion goals for users.  
+1. **Fields**:
+   - `goal_id` (INT, PRIMARY KEY): Unique identifier for each goal.
+   - `target_count` (INT): The target number of tasks to complete.
+   - `completed_task_count` (INT): The current count of completed tasks.  
+1. **Acceptance Criteria**:
+   - Verify that the `TASK_COMPLETION_GOALS` table is created with the specified fields.
+
+---
+
+**Requirement ID**: REQ-DB-009   
+**Requirement Title**: Work Session Goals Table Implementation  
+**Description**: The system shall implement a `WORK_SESSION_GOALS` sub-table to track details of goals related to user work-sessions.  
+1. **Fields**:
+   - `goal_id` (INT, PRIMARY KEY): Unique identifier for each session goal.
+   - `target_duration` (INT): The target duration for the session goal in minutes.
+   - `completed_duration` (INT): The current duration that has been completed.  
+1. **Acceptance Criteria**:
+   - Verify that the `WORK_SESSION_GOALS` table is created with the specified fields.
+
+---
+
+**Requirement ID**: REQ-DB-010  
+**Requirement Title**: Work Sessions Table Implementation  
+**Description**: The system shall implement a `WORK_SESSIONS` table to track user work-sessions.  
+1. **Fields**:
+   - `session_id` (INT, PRIMARY KEY): Unique identifier for each session.
+   - `description` (VARCHAR(20)): A brief description of the session.
+   - `status` (VARCHAR(12)): The current status of the session (e.g., Active, Completed).
+   - `start_time` (DATE): The start date of the session.
+   - `end_time` (DATE): The end date of the session.
+   - `duration` (INT): The total duration of the session in minutes.
+   - `user_id` (INT, FOREIGN KEY): The identifier of the user associated with the session.
+   - `created_on` (TIMESTAMP, NOT NULL): The timestamp when the session was created.  
+1. **Constraints**:
+   - `user_id` must reference a valid `user_id` in the `USERS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `WORK_SESSIONS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: REQ-DB-011  
+**Requirement Title**: Work Session Tags Table Implementation  
+**Description**: The system shall implement a `WORK_SESSION_TAGS` table to associate tags with user work-sessions.  
+1. **Fields**:
+   - `session_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the session.
+   - `tag_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the associated tag.  
+1. **Constraints**:
+   - `session_id` must reference a valid `session_id` in the `WORK_SESSIONS` table.
+   - `tag_id` must reference a valid `tag_id` in the `TAGS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `WORK_SESSION_TAGS` table is created with the specified fields and constraints.
+
+---
+
+**Requirement ID**: REQ-DB-012  
+**Requirement Title**: Work Session Log Table Implementation  
+**Description**: The system shall implement a `WORK_SESSION_LOG` table to log the start and end times of user sessions.  
+1. **Fields**:
+   - `session_id` (INT, PRIMARY KEY, FOREIGN KEY): Unique identifier for the session.
+   - `start_time` (TIMESTAMP, PRIMARY KEY): The start time of the session.
+   - `end_time` (TIMESTAMP): The end time of the session.  
+1. **Constraints**:
+   - `session_id` must reference a valid `session_id` in the `WORK_SESSIONS` table.  
+1. **Acceptance Criteria**:
+   - Verify that the `WORK_SESSION_LOG` table is created with the specified fields and constraints.
 
 
-### 6.6 Top-level Classes (Required)
-Design the major top-level classes and their components. Use a free Class Diagram Tool to draw the Class Diagram showing classes, their attributes, operations, and relationships between them. Example of Top-Level Classes Requirement:
-Requirement ID: CLASS1
-Description: User Class
-Requirement: ……………….
+### 6.6 Top-level Classes
 
-* Specifications
-* ……
-* Class Diagram
+
+**6.6.1 Class Diagram**
+![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UML_class_diagram_v2.png)
+
+---
+
+**6.6.2 Requirements For Top-Level Classes:**
+---
+
+**Requirement ID:** CLASS_USER  
+**Requirement Title:** User Class  
+**Description:**  
+The `User` class shall manage user account information and authentication within the system, with attributes `userID`, `username`, `password`, `email`, and `created_on`. The class shall provide the following functionalities:
+
+1. **User Registration and Authentication:**
+   - The `User` class shall include a `registerUser()` method that creates a new user account, returning a confirmation message upon successful registration.
+   - The `login()` method shall authenticate the user based on `username` and `password`.
+   - The `logout()` method shall log the user out of the system, returning a status message confirming the action.
+
+2. **Account Management:**
+   - The `updateInfo()` method shall allow users to update account details, such as `email` or other personal information, and return a status message confirming the update.
+   - The `updatePass()` method shall allow users to securely update their password.
+   - The `deleteAcct()` method shall remove the user's account from the system, including all associated data, if applicable.
+
+3. **Access Control:**
+   - `username` and `password` shall be private to ensure secure handling of user credentials.
+   - `userID`, `email`, and `created_on` shall be accessible within the system for account management and user identification purposes.
+
+---
+
+**Requirement ID:** CLASS_INTERFACE  
+**Requirement Title:** Task Manager Interface  
+**Description:**  
+The `TaskManager` interface shall serve as a central hub for managing tasks, tags, work-sessions, and goals within the system, supporting core functionalities and returning results in JSON string format where applicable. The class shall include the following methods:
+
+1. **Task Management:**
+   - The `createTask()` method shall allow users to create a new task, returning a JSON string with the details of the newly created task.
+   - The `getTask()` method shall retrieve a specific task by its `taskID`, returning the task details as a JSON string.
+   - The `getAllTasks()` method shall retrieve all tasks associated with the user, returning task data as a JSON string.
+   - The `deleteTask()` method shall delete a specific task by `taskID`, ensuring all related data is removed from the system.
+
+2. **Tag Management:**
+   - The `createTag()` method shall allow users to create a new tag, returning a JSON string with the details of the newly created tag.
+   - The `getAllTags()` method shall retrieve all tags associated with the user, returning tag data as a JSON string.
+   - The `deleteTag()` method shall remove a specific tag by `tagID`, ensuring it is disassociated from all related tasks or work-sessions.
+
+3. **Session Management:**
+   - The `createSession()` method shall allow users to create a new session, returning a JSON string with the details of the newly created session.
+   - The `getSession()` method shall retrieve a specific session by its `sessionID`, returning the session details as a JSON string.
+   - The `deleteSession()` method shall delete a specific session by `sessionID`, ensuring all related data is removed from the system.
+
+4. **Goal Management:**
+   - The `createGoal()` method shall allow users to set a new goal, returning a JSON string with the details of the newly created goal.
+   - The `deleteGoal()` method shall remove a specific goal by `goalID`, ensuring all associated data and references are cleared.
+
+---
+
+**Requirement ID:** CLASS_ABSTRACT_TASK  
+**Requirement Title:** Abstract Task Class  
+**Description:**  
+The `Abstract Task` class shall serve as a base class for different types of tasks (e.g. Due-Date, Time-Bracketed), managing common task attributes and functionalities. It shall include the following components and abstract methods that must be implemented by all subclasses:
+
+1. **Attributes:**
+   - The `taskID` shall uniquely identify each task and be accessible across the system.
+   - The `title` and `description` shall provide task details, accessible via getter methods.
+   - The `taskTags` attribute shall store a list of tags associated with the task for categorization and quick retrieval.
+   - The `priority` attribute shall indicate the urgency or importance of the task, with getter and setter methods for modification.
+   - The `status` attribute shall represent the current state of the task (e.g., "Pending", "In Progress", "Completed"), with getter and setter methods.
+   - The `userID` shall link each task to a specific user.
+   - The `creationDate` shall record the date on which the task was created.
+
+2. **Abstract Methods:**
+   - The `updateTask()` method shall be an abstract method, requiring subclasses to define task-specific update functionality. This method shall return a JSON-formatted string with updated task details.
+   - The `validate()` method shall be an abstract method to validate the task’s attributes, ensuring they meet task-specific requirements before saving or updating.
+
+3. **Tag Management:**
+   - The `addTag(Tag)` method shall allow adding a tag to the `taskTags` list, linking it to the task for filtering or organization.
+   - The `removeTag(Tag)` method shall remove a specified tag from `taskTags`, disassociating it from the task.
+   - The `getTags()` method shall return the current list of tags associated with the task.
+
+4. **Task Details Accessors:**
+   - The `getTitle()` method shall return the task's title.
+   - The `getDesc()` method shall return the task's description.
+   - The `setPriority(priority:str)` and `getPriority()` methods shall allow setting and retrieving the priority level of the task.
+   - The `setStatus(status:str)` and `getStatus()` methods shall allow setting and retrieving the current status of the task.
+
+5. **Completion Management:**
+   - The `markComplete()` method shall privately set the task’s status to "completed" handle any associated goals or database logging and is accessible only within the class or by subclasses. 
+
+---
+
+**Requirement ID:** CLASS_DUE_DATE_TASK  
+**Requirement Title:** Due-Date Task Class  
+**Description:**  
+
+The `DueDateTask` class shall extend the `Abstract Task` class, adding a due date attribute to represent tasks that have a specific completion deadline. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `dueDate` attribute shall store the deadline date by which the task must be completed, represented as a `date` object.
+
+2. **Abstract Method Implementations:**
+   - The `updateTask()` method shall update task details, including the `dueDate`, and return a JSON-formatted string with updated task information.
+   - The `validate()` method shall enforce that the `dueDate` is a valid date and set according to the requirements of the specific task (e.g., not in the past).
+
+3. **Due Date Accessor:**
+   - The `getDueDate()` method shall retrieve the `dueDate` of the task, returning it as a `date` object.
+
+---
+
+**Requirement ID:** CLASS_TIME_BRACKET_TASK  
+**Requirement Title:** Time-Bracket Task Class  
+**Description:**  
+
+The `TimeBracketTask` class shall extend the `Abstract Task` class, adding start and end time attributes to represent tasks with defined time intervals. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `startTime` attribute shall store the starting date and time for the task, represented as a `date` object.
+   - The `endTime` attribute shall store the ending date and time for the task, represented as a `date` object.
+
+2. **Abstract Method Implementations:**
+   - The `updateTask()` method shall update task details, including `startTime` and `endTime`, and return a JSON-formatted string with updated task information.
+   - The `validate()` method shall enforce that `startTime` and `endTime` are valid date-time values, with `endTime` occurring after `startTime`.
+
+3. **Time Accessors:**
+   - The `getStart()` method shall retrieve the `startTime` of the task, returning it as a `date` object.
+   - The `getEnd()` method shall retrieve the `endTime` of the task, returning it as a `date` object.
+
+---
+
+**Requirement ID:** CLASS_TAG  
+**Requirement Title:** Tag Class  
+**Description:**  
+
+The `Tag` class shall manage the tagging system within the application, allowing for the creation and modification of tags that can be associated with tasks and work-sessions. This class shall provide the following features:
+
+1. **Attributes:**
+   - The `tagID` attribute shall uniquely identify each tag within the system, ensuring that tags can be reliably referenced.
+   - The `name` attribute shall store the name of the tag as a string.
+   - The `color` attribute shall represent the color associated with the tag, stored as a string.
+   - The `creationDate` attribute shall record the date on which the tag was created, providing a timestamp for tracking when tags were added.
+
+2. **Tag Management:**
+   - The `updateTag()` method shall allow for the modification of tag attributes, returning a JSON-formatted string with the updated tag information.
+   
+3. **Name Accessor:**
+   - The `getName()` method shall return the current name of the tag, allowing other components of the application to retrieve tag identifiers.
+
+4. **Color Management:**
+   - The `setColor(color:str)` method shall allow for updating the color attribute of the tag, enabling customization.
+   - The `getColor()` method shall return the current color of the tag.
+
+---
+
+---
+
+**Requirement ID:** CLASS_ABSTRACT_GOAL  
+**Requirement Title:** Abstract Goal Class  
+**Description:**  
+
+The `Abstract Goal` class shall serve as a blueprint for goal management within the application, providing common attributes and methods for specific goal types while enforcing the implementation of key functionalities in subclasses. This class shall include the following features:
+
+1. **Attributes:**
+   - The `goalID` attribute shall uniquely identify each goal within the system.
+   - The `tagID` attribute shall associate the goal with a specific tag.
+   - The `description` attribute shall store a textual description of the goal.
+   - The `isCompleted` attribute shall indicate whether the goal has been completed.
+   - The `timeFrame` attribute shall specify the duration or deadline for achieving the goal.
+   - The `userID` attribute shall associate the goal with a specific user.
+   - The `creationDate` attribute shall record the date on which the goal was created.
+
+2. **Abstract Method Implementations:**
+   - The `updateGoal()` method shall be defined as an abstract method that must be implemented by subclasses to update goal details, returning a JSON-formatted string with the updated information.
+   - The `calcProgress()` method shall be defined as an abstract method that subclasses must implement to calculate and return the progress toward achieving the goal as a double value.
+   - The `validate()` method shall be defined as an abstract method that must be implemented by subclasses to ensure that goal attributes meet required criteria before being processed.
+
+3. **Tag Accessor:**
+   - The `getTag()` method shall return the associated `tagID` of the goal, allowing for retrieval of the tag associated with the goal.
+
+4. **Description Accessor:**
+   - The `getDesc()` method shall retrieve the goal's description, providing context to other components of the application.
+
+5. **Completion Status:**
+   - The `setStatus()` method shall allow subclasses to update the `isCompleted` status of the goal.
+   - The `getStatus()` method shall return the current completion status of the goal as a boolean value.
+
+6. **Time Frame Management:**
+   - The `setTimeFrame()` method shall allow for the updating of the `timeFrame` attribute, ensuring flexibility in goal deadlines.
+   - The `getTimeFrame()` method shall return the current time frame associated with the goal as a string.
+
+7. **Completion Method:**
+   - The `markComplete()` method shall allow subclasses to mark the goal as completed, updating the `isCompleted` attribute accordingly.
+
+---
+
+**Requirement ID:** CLASS_TASK_GOAL  
+**Requirement Title:** Task Goal Class  
+**Description:**  
+
+The `TaskGoal` class shall extend `Abstract Goal` and manage goals related to the number of tasks completed with associated `Tag`(s), tracking both target and completed task counts. This class shall include the following features:
+
+1. **Attributes:**
+   - The `targetCount` attribute shall specify the intended number of tasks to be completed for the goal.
+   - The `completedCount` attribute shall track the actual number of tasks that have been completed toward the goal.
+
+2. **Abstract Method Implementations:**
+   - The `updateGoal()` method shall be implemented to update the task goal details, returning a JSON-formatted string with the updated information.
+   - The `validate()` method shall be defined to ensure that the task goal attributes are valid before processing.
+   - The `calcProgress()` method shall calculate and return the progress toward achieving the target count as a double value.
+
+3. **Count Accessors:**
+   - The `getTargetCount()` method shall return the target count for the task goal as an integer.
+   - The `getCompletedCount()` method shall return the completed count for the task goal as an integer.
+
+---
+
+**Requirement ID:** CLASS_WORKSESSION_GOAL  
+**Requirement Title:** Work Session Goal Class  
+**Description:**  
+
+The `WorkSessionGoal` class shall extend `Abstract Goal` and manage goals related to time spent on work-sessions with associated `Tag`(s), tracking both target and completed durations. This class shall include the following features:
+
+1. **Attributes:**
+   - The `targetDuration` attribute shall specify the intended time duration for the work-session goal.
+   - The `completedDuration` attribute shall track the actual time spent on the work-session goal.
+
+2. **Abstract Method Implementations:**
+   - The `updateGoal()` method shall be implemented to update the work-session goal details, returning a JSON-formatted string with the updated information.
+   - The `validate()` method shall be defined to ensure that the work-session goal attributes are valid before processing.
+   - The `calcProgress()` method shall calculate and return the progress toward achieving the target duration as a double value.
+
+3. **Duration Accessors:**
+   - The `getTargetDuration()` method shall return the target duration for the work-session goal as an integer.
+   - The `getCompletedDuration()` method shall return the completed duration for the work-session goal as an integer.
+
+---
+
+**Requirement ID:** CLASS_WORK_SESSION  
+**Requirement Title:** Work Session Class  
+**Description:**  
+
+The `WorkSession` class shall manage the recording and tracking of user work-session within the application, capturing relevant details about each work-session's duration and status. This class shall include the following features:
+
+1. **Attributes:**
+   - The `sessionID` attribute shall uniquely identify each work-session in the system.
+   - The `description` attribute shall provide a brief summary of the work-session's purpose or content.
+   - The `status` attribute shall indicate the current state of the work-session (e.g., active, paused, completed).
+   - The `startTime` attribute shall record the date and time when the work-session starts.
+   - The `endTime` attribute shall capture the date and time when the work-session ends.
+   - The `duration` attribute shall store the total duration of the work-session in minutes.
+   - The `intervals` attribute shall maintain a list of logged time intervals for the work-session.
+   - The `userID` attribute shall associate the work-session with a specific user.
+   - The `creationDate` attribute shall record the date when the work-session was created.
+
+2. **Work Session Management Methods:**
+   - The `updateSession()` method shall be implemented to update the work-session details, returning a JSON-formatted string with the updated information.
+   - The `startSession()` method shall initiate the work-session, recording the start time and updating the status to indicate the work-session is active.
+   - The `endSession()` method shall conclude the work-session, recording the end time and updating the duration accordingly.
+   - The `pauseSession()` method shall temporarily halt the work-session, changing the status to paused without concluding it.
+   - The `resumeSession()` method shall restart a paused work-session, setting the status back to active.
+
+3. **Logging and Calculation Methods:**
+   - The `logInterval()` method shall record a time interval within the work-session, updating the intervals list.
+   - The `calcDuration()` method shall calculate and return the total duration of the work-session in minutes.
+   - The `getDuration()` method shall retrieve the total duration of the work-session as an integer.
+   - The `getStartTime()` method shall return the start time of the work-session as a date object.
+   - The `getEndTime()` method shall return the end time of the work-session as a date object.
+
+---
 
 ### 6.7 Data Flow and States (Required)
 Design and show how data will move through the system and how various entities (or objects) will transition between different states. Use a free Data Flow Diagram Tool to create the Data Flow Diagram. Example of Data Flow and States Requirement:
