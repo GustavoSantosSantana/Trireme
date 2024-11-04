@@ -908,12 +908,14 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
 
 ---
 
-### 6.7 Data Flow and States 
+### 6.7 Data Flow and States
 
 **Requirement ID:** DF0  
 **Description:** System Context for Task Management Application  
 **Requirement:**  
 The task management system shall accept user commands to perform operations on the tasks and other processes within, interacting with a centralized database to read and write data as needed. The system shall provide responses to the user, confirming actions, retrieving requested information, or notifying the user of errors, ensuring smooth interaction and data flow between the user and the database.
+
+**Testing:** This will be tested during integration tests using selenium and python by inputting info into the app and then calling the info elsewhere on the app  for confirmation.
 
 #### Level 0 Task Management Data Flow (Context):
 
@@ -926,6 +928,8 @@ The task management system shall accept user commands to perform operations on t
 **Requirement:**  
 The system shall provide distinct management processes for handling tags, tasks, work sessions, goals, and user data. Each core process (Manage Tags, Manage Tasks, Manage Work Sessions, Manage Goals, Manage User) shall interact with its respective data store to perform read and write operations, allowing the user to create, update, and retrieve information as needed. The system shall return feedback to the user after each operation, including task, session, goal, tag, or user information, ensuring comprehensive data management and consistent responses to user actions.
 
+**Testing:** This will be tested during integration tests using selenium and python by inputting info into the app and then confirming the result via the app's response messages.
+
 #### Level 1 Task Management Data Flow (Core Processes):
 
 ![Level 1 Task Management Data Flow (Core Processes)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_1_Core_Processes.png)
@@ -935,7 +939,9 @@ The system shall provide distinct management processes for handling tags, tasks,
 **Requirement ID:** DF201    
 **Description:** Task Management Data Flow  
 **Requirement:**  
-The system shall allow users to create, update, delete, and assign tags to tasks through a unified task management interface. Each task operation (create, update, delete, assign tag) shall interact with the `Task Data` storage to read or write task details, and the system shall provide feedback to the user by returning the created, updated, or deleted task information after each operation. 
+The system shall allow users to create, update, delete, and assign tags to tasks through a unified task management interface. Each task operation (create, update, delete, assign tag) shall interact with the `Task Data` storage to read or write task details, and the system shall provide feedback to the user by returning the created, updated, or deleted task information after each operation.
+
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and call info on the tags after each step to test whether the processes worked.
 
 #### Level 2.1 Data Flow Diagram (Task Management):
 
@@ -948,6 +954,8 @@ The system shall allow users to create, update, delete, and assign tags to tasks
 **Requirement:**  
 The system shall allow users to create, edit, and delete tags within the application. Each tag operation (create, edit, delete) shall interact with the `Tag Data` storage to read or write tag information, and the system shall provide feedback to the user by returning the newly created or updated tag details upon successful completion of each action.
 
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and testing the app's response messages.
+
 #### Level 2.2 Data Flow Diagram (Tag Management):
 
 ![Level 2.2 Data Flow Diagram (Tag Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.2_Tag_Management.png)
@@ -958,6 +966,8 @@ The system shall allow users to create, edit, and delete tags within the applica
 **Description:** Layer 2.3 Work Session Management Data Flow  
 **Requirement:**  
 The system shall allow users to create, update, delete, assign tags, and control (start, stop, pause, resume) work sessions within the application. Each work session operation shall interact with the `Work Session Data` or `Work Session Log` storage to read, write, or log session details. The system shall provide feedback to the user by returning the newly created or updated work session details for each create/update action.
+
+**Testing:** This will be tested during integration tests using selenium and python by starting, stopping, pausing, and resuming work sessions and testing the app's feedback messages to confirm the events occurred correctly.
 
 #### Level 2.3 Data Flow Diagram (Work Session Management):
 
