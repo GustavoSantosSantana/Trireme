@@ -22,6 +22,7 @@
 | 2.6.1 | Michael Lowell | Updated hardware requirements | 11/3/2024 |
 | 2.7 | Michael Lowell | Added architecture requirements | 11/3/2024 |
 | 2.8 | Michael Lowell | Added internal interface requirements | 11/3/2024 |
+| 3 | Patrick Brown | Added test plans to hardware requirements | 11/3/2024 |
 | x | x | x | x |
 
 ---
@@ -351,20 +352,36 @@ Describe the attributes, qualities, and constraints of the application that are 
 ### 6.2 Hardware (Required)
 
 * **Requirement ID:** HW1
+
   **Description:** Web Hosting
+
   **Requirement:** Server Hardware will be rented from a cloud hosting service. We will rent the servers from Amazon Web Services, choosing the m5ad.2xlarge package.
 
+  **Testing:** This will be tested using unit tests to determine whether or not users can connect to the server using a selenium python test which will try to connect to the app and perform a simple command.
+
 * **Requirement ID:** HW2
+
   **Description:** Database systems
+
   **Requirement:** Database Hardware will be rented from the same web host as above.
 
+  **Testing:** This will be tested using integration tests which will use selenium in python to perform information calls in the app.
+
 * **Requirement ID:** HW3
+
   **Description:** Development Environment
+
   **Requirement:** Digital workspaces will be procured for each member of the development team. Each member will be provided with a desktop PC with a monitor, keyboard, and mouse. Graphics designers will be provided with additional GPU power to facilitate graphics rendering. Programmers will be provided with an additional monitor to facilitate reference lookups and a rubber duck to facilitate debugging.
 
+  **Testing:** This will be tested using a python file containing instructions to confirm the setup and the presence of the hardware.
+
 * **Requirement ID:** HW4
+
   **Description:** Deployment Test Platforms
+
   **Requirement:** Devices corresponding to expected user hardware will be procured. Such devices will include: current gen mobile phones running both IOS (v18.1) and Droid (v15) systems, modern consumer-grade laptop, older gen mobile phones running both IOS and Droid systems, tablet computers.
+
+  **Testing:** This will be tested manually to confirm the setup and the presence of IOS (v18.1) and Droid (v15) systems, and whether or not the phones are current models.
 
 ### 6.3 User Experience (Required)
 Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
