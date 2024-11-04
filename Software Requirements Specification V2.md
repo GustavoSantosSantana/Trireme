@@ -915,6 +915,8 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
 **Requirement:**  
 The task management system shall accept user commands to perform operations on the tasks and other processes within, interacting with a centralized database to read and write data as needed. The system shall provide responses to the user, confirming actions, retrieving requested information, or notifying the user of errors, ensuring smooth interaction and data flow between the user and the database.
 
+**Testing:** This will be tested during integration tests using selenium and python by inputting info into the app and then calling the info elsewhere on the app  for confirmation.
+
 #### Level 0 Task Management Data Flow (Context):
 
 ![Level 0 Task Management Data Flow (Context)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_0_Sys_Context.png)
@@ -925,6 +927,8 @@ The task management system shall accept user commands to perform operations on t
 **Description:** Core Processes for Task Management Application  
 **Requirement:**  
 The system shall provide distinct management processes for handling tags, tasks, work sessions, goals, and user data. Each core process (Manage Tags, Manage Tasks, Manage Work Sessions, Manage Goals, Manage User) shall interact with its respective data store to perform read and write operations, allowing the user to create, update, and retrieve information as needed. The system shall return feedback to the user after each operation, including task, session, goal, tag, or user information, ensuring comprehensive data management and consistent responses to user actions.
+
+**Testing:** This will be tested during integration tests using selenium and python by inputting info into the app and then confirming the result via the app's response messages.
 
 #### Level 1 Task Management Data Flow (Core Processes):
 
@@ -937,6 +941,8 @@ The system shall provide distinct management processes for handling tags, tasks,
 **Requirement:**  
 The system shall allow users to create, update, delete, and assign tags to tasks through a unified task management interface. Each task operation (create, update, delete, assign tag) shall interact with the `Task Data` storage to read or write task details, and the system shall provide feedback to the user by returning the created, updated, or deleted task information after each operation. 
 
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and call info on the tags after each step to test whether the processes worked.
+
 #### Level 2.1 Data Flow Diagram (Task Management):
 
 ![Level 2.1 Data Flow Diagram (Task Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.1_Task_Management.png)
@@ -947,6 +953,8 @@ The system shall allow users to create, update, delete, and assign tags to tasks
 **Description:** Tag Management Data Flow  
 **Requirement:**  
 The system shall allow users to create, edit, and delete tags within the application. Each tag operation (create, edit, delete) shall interact with the `Tag Data` storage to read or write tag information, and the system shall provide feedback to the user by returning the newly created or updated tag details upon successful completion of each action.
+
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and testing the app's response messages.
 
 #### Level 2.2 Data Flow Diagram (Tag Management):
 
@@ -959,6 +967,8 @@ The system shall allow users to create, edit, and delete tags within the applica
 **Requirement:**  
 The system shall allow users to create, update, delete, assign tags, and control (start, stop, pause, resume) work sessions within the application. Each work session operation shall interact with the `Work Session Data` or `Work Session Log` storage to read, write, or log session details. The system shall provide feedback to the user by returning the newly created or updated work session details for each create/update action.
 
+**Testing:** This will be tested during integration tests using selenium and python by starting, stopping, pausing, and resuming work sessions and testing the app's feedback messages to confirm the events occurred correctly.
+
 #### Level 2.3 Data Flow Diagram (Work Session Management):
 
 ![Level 2.3 Data Flow Diagram (Work Session Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.3_WSession_Management.png)
@@ -970,6 +980,8 @@ The system shall allow users to create, update, delete, assign tags, and control
 **Requirement:**  
 The system shall enable users to create, update, track progress, and delete goals within the application. Each goal operation shall interact with the `Goal Data` storage to read, write, or update goal information. The system shall provide feedback to the user by returning newly created goal details, updated goal details, progress status, or deletion confirmation, depending on the action performed.
 
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, tracking progress, and deleting goals, verifying that feedback messages are correctly displayed for each operation to confirm the process functions as expected.
+
 #### Level 2.4 Data Flow Diagram (Goal Management):
 
 ![Level 2.4 Data Flow Diagram (Goal Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.4_Goal_Management.png)
@@ -980,6 +992,8 @@ The system shall enable users to create, update, track progress, and delete goal
 **Description:** User Management Data Flow  
 **Requirement:**  
 The system shall provide user management capabilities, including user registration, login, and updating user information. Each operation (register, login, update) shall interact with the `User Data` storage to read or write user credentials and details. The system shall provide feedback to the user by confirming registration, granting access upon successful login, and returning updated user details upon completion of profile updates.
+
+**Testing:** This will be tested during integration tests using selenium and python by registering, logging in, and updating user profiles. Each test will verify that the system returns the appropriate feedback to ensure user management processes are functioning as required.
 
 #### Level 2.5 Data Flow Diagram (Goal Management):
 
