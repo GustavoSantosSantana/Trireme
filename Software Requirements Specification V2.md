@@ -18,13 +18,15 @@
 | 2.4 |  John Diveris  | Added ERD Diagram Visual | 11/1/2024 |
 | 2.4.1 |  John Diveris  | Added Database Requirements | 11/1/2024 |
 | 2.4.2 | John Diveris | Added Class Diagram | 11/1/2024  |
+| 2.4.3 | John Diveris | Added Class Requirements| 11/2/2024 |
 | 2.5 | Michael Lowell | Added hardware requirements | 11/2/2024 |
 | 2.5.1 | Michael Lowell | Updated hardware requirements | 11/3/2024 |
 | 2.6 | Michael Lowell | Added architecture requirements | 11/3/2024 |
 | 2.7 | Michael Lowell | Added internal interface requirements | 11/3/2024 |
 | 2.8 | Yifan Gao| Complete 6.3, 6.8, 6.11, 6.12 | 11/3/2024 |
 | 2.9 | Patrick Brown | Added test plans to hardware requirements | 11/3/2024 |
-| x | x | x | x |
+| 2.10 | John Diveris | Added Data Flow Diagrams & Requirements | 11/3/2024  |
+
 
 ---
 
