@@ -789,8 +789,6 @@ The `Tag` class shall manage the tagging system within the application, allowing
 
 ---
 
----
-
 **Requirement ID:** CLASS_ABSTRACT_GOAL  
 **Requirement Title:** Abstract Goal Class  
 **Description:**  
