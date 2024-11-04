@@ -327,7 +327,7 @@ Describe the attributes, qualities, and constraints of the application that are 
 
 ## 6. High-level Design
 
-### 6.1 Security Requirements
+### 6.1 Security (Required)
 
 * **Requirement ID:** SEC1
   
@@ -450,7 +450,7 @@ Requirement: ……………….
   
  ---
 
-### 6.5 Database 
+### 6.5 Database (Required)
 The database for this task management app will store and manage data related to users, tasks, work-sessions, goals, and tags, supporting efficient organization and retrieval of each entity. Each table is designed with primary keys and relationships to ensure consistency, enforce data integrity, and accommodate user-specific and goal-tracking functionality.
 
 ---
@@ -642,7 +642,7 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-### 6.6 Top-level Classes
+### 6.6 Top-level Classes (Required)
 
 
 ### 6.6.1 Class Diagram
@@ -911,7 +911,7 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
 
 ---
 
-### 6.7 Data Flow and States
+### 6.7 Data Flow and States (Required)
 
 **Requirement ID:** DF0  
 **Description:** System Context for Task Management Application  
