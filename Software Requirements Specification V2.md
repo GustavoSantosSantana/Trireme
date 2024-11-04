@@ -22,7 +22,7 @@
 | 2.6.1 | Michael Lowell | Updated hardware requirements | 11/3/2024 |
 | 2.7 | Michael Lowell | Added architecture requirements | 11/3/2024 |
 | 2.8 | Michael Lowell | Added internal interface requirements | 11/3/2024 |
-| 3 | Patrick Brown | Added test plans to hardware requirements | 11/3/2024 |
+| 2.9 | Patrick Brown | Added test plans to hardware requirements | 11/3/2024 |
 | x | x | x | x |
 
 ---
