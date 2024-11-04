@@ -391,10 +391,6 @@ Describe the attributes, qualities, and constraints of the application that are 
   ---
 
 ### 6.3 User Experience (Required)
-Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
-Requirement ID: UX1
-Description: User Login
-Requirement: ……………….
 
 #### **User Experience 1: User Login and Authentication**
 
@@ -438,10 +434,6 @@ Requirement: ……………….
 ---
 
 ### 6.4 Architecture (Required)
-Describe the overall structure and organization of the software system. Define how various components interact, the technologies to be used, and any constraints that must be considered during the design phases. Example of Architecture Requirement:
-Requirement ID: ARCH1
-Description: Client-Server Architecture
-Requirement: ……………….
 
 * **Requirement ID:** ARCH1
   **Description:** Client-Server Architecture
