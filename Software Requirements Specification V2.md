@@ -452,15 +452,14 @@ The database for this task management app will store and manage data related to 
 
 ---
 
-**6.5.1 Entity Relationship Diagram:**
+### 6.5.1 Entity Relationship Diagram
 
 ![Entity Relationship Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/ERD_Diagram_v2.png)
 
 ---
 
-**6.5.2 Requirements for Task Management Database**
+### 6.5.2 Requirements for Task Management Database
 
----
 
 **Requirement ID**: REQ-DB-001   
 **Requirement Title**: User Table Implementation  
@@ -643,13 +642,13 @@ The database for this task management app will store and manage data related to 
 ### 6.6 Top-level Classes
 
 
-**6.6.1 Class Diagram**
+### 6.6.1 Class Diagram
 ![Class Diagram](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/UML_class_diagram_v2.png)
 
 ---
 
-**6.6.2 Requirements For Top-Level Classes:**
----
+### 6.6.2 Requirements For Top-Level Classes
+
 
 **Requirement ID:** CLASS_USER  
 **Requirement Title:** User Class  
@@ -909,15 +908,60 @@ The `WorkSession` class shall manage the recording and tracking of user work-ses
 
 ---
 
-### 6.7 Data Flow and States (Required)
-Design and show how data will move through the system and how various entities (or objects) will transition between different states. Use a free Data Flow Diagram Tool to create the Data Flow Diagram. Example of Data Flow and States Requirement:
-Requirement ID: DF1
-Description: Users to submit feedback through an online form
-Requirement: ……………….
+### 6.7 Data Flow and States 
 
-* Specifications
-* ……
-* Data Flow Diagram
+**Requirement ID:** DF0  
+**Description:** System Context for Task Management Application  
+**Requirement:**  
+The task management system shall accept user commands to perform operations on the tasks and other processes within, interacting with a centralized database to read and write data as needed. The system shall provide responses to the user, confirming actions, retrieving requested information, or notifying the user of errors, ensuring smooth interaction and data flow between the user and the database.
+
+#### Level 0 Task Management Data Flow (Context):
+
+![Level 0 Task Management Data Flow (Context)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_0_Sys_Context.png)
+
+---
+
+**Requirement ID:** DF1  
+**Description:** Core Processes for Task Management Application  
+**Requirement:**  
+The system shall provide distinct management processes for handling tags, tasks, work sessions, goals, and user data. Each core process (Manage Tags, Manage Tasks, Manage Work Sessions, Manage Goals, Manage User) shall interact with its respective data store to perform read and write operations, allowing the user to create, update, and retrieve information as needed. The system shall return feedback to the user after each operation, including task, session, goal, tag, or user information, ensuring comprehensive data management and consistent responses to user actions.
+
+#### Level 1 Task Management Data Flow (Core Processes):
+
+![Level 1 Task Management Data Flow (Core Processes)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_1_Core_Processes.png)
+
+---
+
+**Requirement ID:** DF201    
+**Description:** Task Management Data Flow  
+**Requirement:**  
+The system shall allow users to create, update, delete, and assign tags to tasks through a unified task management interface. Each task operation (create, update, delete, assign tag) shall interact with the `Task Data` storage to read or write task details, and the system shall provide feedback to the user by returning the created, updated, or deleted task information after each operation. 
+
+#### Level 2.1 Data Flow Diagram (Task Management):
+
+![Level 2.1 Data Flow Diagram (Task Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.1_Task_Management.png)
+
+---
+
+**Requirement ID:** DF202  
+**Description:** Layer 2.2 Tag Management Data Flow  
+**Requirement:**  
+The system shall allow users to create, edit, and delete tags within the application. Each tag operation (create, edit, delete) shall interact with the `Tag Data` storage to read or write tag information, and the system shall provide feedback to the user by returning the newly created or updated tag details upon successful completion of each action.
+
+#### Level 2.2 Data Flow Diagram (Tag Management):
+
+![Level 2.2 Data Flow Diagram (Tag Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.2_Tag_Management.png)
+
+---
+
+**Requirement ID:** DF203  
+**Description:** Layer 2.3 Work Session Management Data Flow  
+**Requirement:**  
+The system shall allow users to create, update, delete, assign tags, and control (start, stop, pause, resume) work sessions within the application. Each work session operation shall interact with the `Work Session Data` or `Work Session Log` storage to read, write, or log session details. The system shall provide feedback to the user by returning the newly created or updated work session details for each create/update action.
+
+#### Level 2.3 Data Flow Diagram (Work Session Management):
+
+![Level 2.3 Data Flow Diagram (Work Session Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.3_WSession_Management.png)
 
 ---
 
