@@ -26,6 +26,7 @@
 | 2.8 | Yifan Gao| Complete 6.3, 6.8, 6.11, 6.12 | 11/3/2024 |
 | 2.9 | Patrick Brown | Added test plans to hardware requirements | 11/3/2024 |
 | 2.10 | John Diveris | Added Data Flow Diagrams & Requirements | 11/3/2024  |
+| 2.11 | Gustavo Santos | Added Appendix | 11/3/2024  |
 
 
 ---
@@ -35,7 +36,7 @@
 | Reviewer | Version Reviewed | Date |
 |----------|-------------------|------|
 | Gustavo Santos | 2.1-2.3 | 10/27/2024 |
-| x | x | x |
+| Gustavo Santos | 2.4-2.11 | 11/3/2024 |
 
 ---
 
@@ -391,6 +392,10 @@ Describe the attributes, qualities, and constraints of the application that are 
   ---
 
 ### 6.3 User Experience (Required)
+Describe at least two user experiences to outline how users will interact with the system and the overall experience they should have while using it. Use a free User Interface Design Software to create wireframe for each user interface. Example of a User Experience Requirement:
+Requirement ID: UX1
+Description: User Login
+Requirement: ……………….
 
 #### **User Experience 1: User Login and Authentication**
 
@@ -434,6 +439,10 @@ Describe the attributes, qualities, and constraints of the application that are 
 ---
 
 ### 6.4 Architecture (Required)
+Describe the overall structure and organization of the software system. Define how various components interact, the technologies to be used, and any constraints that must be considered during the design phases. Example of Architecture Requirement:
+Requirement ID: ARCH1
+Description: Client-Server Architecture
+Requirement: ……………….
 
 * **Requirement ID:** ARCH1
   **Description:** Client-Server Architecture
@@ -1208,3 +1217,42 @@ Describe the training plan for the user.
 ---
 
 ## 7. Appendixes (Optional)
+
+* **Glossary:**
+  - **2-Factor Authentication (2FA):** A security process in which a user provides two different authentication factors to verify their identity, often involving a combination of a password and a one-time code sent via email or SMS.
+  - **Affordances:** Design elements that suggest intuitive interactions for users.
+  - **Audit Log:** A detailed record of user actions and system events, used for monitoring, compliance, and debugging.
+  - **Brute Force Attack:** A method used by attackers to try every possible combination of credentials until access is achieved, often countered by secure password and token implementations.
+  - **Client-Server Architecture:** A network architecture where client devices request resources or services from a centralized server, which processes and delivers the required data or functionality back to the clients.
+  - **Compliance Alerts:** Notifications triggered by the system when certain policies or regulatory requirements are violated.
+  - **Data Flow:** The movement of data through the system as it interacts with users and processes.
+  - **Entity Relationship Diagram (ERD):** A visual representation of the data structure, illustrating relationships between entities (tables) in a database.
+  - **MOSCOW Code:** A prioritization technique in requirement gathering.
+  - **Productivity Insights:** Feedback based on tracked data to suggest better time management.
+  - **Secure Hashing:** A method of encoding data, such as passwords or IDs, to protect it from unauthorized access by converting it into an irreversible format.
+  - **Selenium:** An open-source testing framework used for automating web applications for testing purposes. It is often used in conjunction with Python to conduct automated tests for web-based applications.
+  - **Task Timer:** A tool allowing users to track time on tasks.
+  - **Time Interval:** A set period during which a specific task or event is scheduled to occur.
+  - **Wireframe**: A basic, visual guide to the structure of a user interface, used in design to illustrate layout and content arrangement before development begins.
+ 
+* **Abbreviations:**
+  - **2FA:** Two-Factor Authentication
+  - **API:** Application Programming Interface
+  - **BR:** Business Requirement
+  - **CRUD:** Create, Read, Update, Delete
+  - **CSV:** Comma-Separated Values
+  - **ERD:** Entity Relationship Diagram
+  - **FR:** Functional Requirement
+  - **GPU:** Graphics Processing Unit
+  - **ID:** Identifier
+  - **IOS:** iPhone Operating System
+  - **IP:** Internet Protocol
+  - **IR**: Implementation Requirement
+  - **JSON:** JavaScript Object Notation
+  - **KPI:** Key Performance Indicator
+  - **NFR:** Non-Functional Requirement
+  - **QA:** Quality Assurance
+  - **SMS:** Short Message Service
+  - **UI:** User Interface
+  - **UR:** User Requirement
+  - **UX:** User Experience
