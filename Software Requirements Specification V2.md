@@ -919,7 +919,7 @@ The task management system shall accept user commands to perform operations on t
 
 #### Level 0 Task Management Data Flow (Context):
 
-![Level 0 Task Management Data Flow (Context)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_0_Sys_Context.png)
+![Level 0 Task Management Data Flow (Context)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_0_Sys_Context.png)
 
 ---
 
@@ -932,7 +932,7 @@ The system shall provide distinct management processes for handling tags, tasks,
 
 #### Level 1 Task Management Data Flow (Core Processes):
 
-![Level 1 Task Management Data Flow (Core Processes)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_1_Core_Processes.png)
+![Level 1 Task Management Data Flow (Core Processes)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_1_Core_Processes.png)
 
 ---
 
@@ -943,14 +943,16 @@ The system shall allow users to create, update, delete, and assign tags to tasks
 
 **Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and call info on the tags after each step to test whether the processes worked.
 
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, deleting, and assigning tags and call info on the tags after each step to test whether the processes worked.
+
 #### Level 2.1 Data Flow Diagram (Task Management):
 
-![Level 2.1 Data Flow Diagram (Task Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.1_Task_Management.png)
+![Level 2.1 Data Flow Diagram (Task Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.1_Task_Management.png)
 
 ---
 
 **Requirement ID:** DF202  
-**Description:** Layer 2.2 Tag Management Data Flow  
+**Description:** Tag Management Data Flow  
 **Requirement:**  
 The system shall allow users to create, edit, and delete tags within the application. Each tag operation (create, edit, delete) shall interact with the `Tag Data` storage to read or write tag information, and the system shall provide feedback to the user by returning the newly created or updated tag details upon successful completion of each action.
 
@@ -958,12 +960,12 @@ The system shall allow users to create, edit, and delete tags within the applica
 
 #### Level 2.2 Data Flow Diagram (Tag Management):
 
-![Level 2.2 Data Flow Diagram (Tag Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.2_Tag_Management.png)
+![Level 2.2 Data Flow Diagram (Tag Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.2_Tag_Management.png)
 
 ---
 
 **Requirement ID:** DF203  
-**Description:** Layer 2.3 Work Session Management Data Flow  
+**Description:** Work Session Management Data Flow  
 **Requirement:**  
 The system shall allow users to create, update, delete, assign tags, and control (start, stop, pause, resume) work sessions within the application. Each work session operation shall interact with the `Work Session Data` or `Work Session Log` storage to read, write, or log session details. The system shall provide feedback to the user by returning the newly created or updated work session details for each create/update action.
 
@@ -971,17 +973,37 @@ The system shall allow users to create, update, delete, assign tags, and control
 
 #### Level 2.3 Data Flow Diagram (Work Session Management):
 
-![Level 2.3 Data Flow Diagram (Work Session Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Layer_2.3_WSession_Management.png)
+![Level 2.3 Data Flow Diagram (Work Session Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.3_WSession_Management.png)
+
+---
+
+**Requirement ID:** DF204  
+**Description:** Goal Management Data Flow  
+**Requirement:**  
+The system shall enable users to create, update, track progress, and delete goals within the application. Each goal operation shall interact with the `Goal Data` storage to read, write, or update goal information. The system shall provide feedback to the user by returning newly created goal details, updated goal details, progress status, or deletion confirmation, depending on the action performed.
+
+**Testing:** This will be tested during integration tests using selenium and python by creating, updating, tracking progress, and deleting goals, verifying that feedback messages are correctly displayed for each operation to confirm the process functions as expected.
+
+#### Level 2.4 Data Flow Diagram (Goal Management):
+
+![Level 2.4 Data Flow Diagram (Goal Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.4_Goal_Management.png)
+
+---
+
+**Requirement ID:** DF205  
+**Description:** User Management Data Flow  
+**Requirement:**  
+The system shall provide user management capabilities, including user registration, login, and updating user information. Each operation (register, login, update) shall interact with the `User Data` storage to read or write user credentials and details. The system shall provide feedback to the user by confirming registration, granting access upon successful login, and returning updated user details upon completion of profile updates.
+
+**Testing:** This will be tested during integration tests using selenium and python by registering, logging in, and updating user profiles. Each test will verify that the system returns the appropriate feedback to ensure user management processes are functioning as required.
+
+#### Level 2.5 Data Flow Diagram (Goal Management):
+
+![Level 2.5 Data Flow Diagram (Goal Management)](https://github.com/GustavoSantosSantana/Trireme/blob/main/Images/Level_2.5_User_Management.png)
 
 ---
 
 ### 6.8 Reports (Required)
-Outlines the reporting capabilities and select at least one type of the reports the project will create. Example of Report Requirement:
-Requirement ID: REPORT1
-Description: Sales Performance Report
-Requirement: ………………
-
----
 
 #### **6.8.1 User Activity Report**
 - **Description**: Summarizes user activities within the system over a specified period. This includes logins, feature usage, and data entry/modification actions.
