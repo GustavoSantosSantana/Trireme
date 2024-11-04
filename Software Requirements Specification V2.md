@@ -913,6 +913,8 @@ Requirement: ……………….
 * ……
 * Data Flow Diagram
 
+---
+
 ### 6.8 Reports (Required)
 Outlines the reporting capabilities and select at least one type of the reports the project will create. Example of Report Requirement:
 Requirement ID: REPORT1
