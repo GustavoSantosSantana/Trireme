@@ -395,6 +395,7 @@ Description: User Login
 Requirement: ……………….
 
 #### **User Experience 1: User Login and Authentication**
+
 1. **Objective**: The user can securely log in to access the application’s features.
 2. **Steps**:
    - **Step 1**: User opens the application and is presented with the login screen.
@@ -408,10 +409,13 @@ Requirement: ……………….
 3. **Wireframe Suggestions**:
    - **Login Screen**: Include text fields for username and password, a login button, and an error message placeholder below the form. Optionally, add a "Forgot Password" link below the login button for recovery.
    - **Error Message Placement**: Show an error message in red text just below the password field.
-   
+
+4. **Testing:** This will be tested using a python selenium integration test which will attempt to log in using correct and incorect login info and confirm whether the responces are correct.
+
 ---
 
 #### **User Experience 2: Navigating the Dashboard and Accessing Reports**
+
 1. **Objective**: After logging in, the user navigates to the dashboard to view key information and access reports.
 2. **Steps**:
    - **Step 1**: User is on the main dashboard after successful login.
@@ -426,6 +430,8 @@ Requirement: ……………….
 3. **Wireframe Suggestions**:
    - **Dashboard Screen**: Include a top navigation bar and sections for Recent Activity, Notifications, and Reports.
    - **Reports Section**: Show a list of report types with a "Generate" button beside each.
+
+4. **Testing:** This will be tested using a python selenium integration test that will exicute a series of commands and then navigate to the dashboard to confirm that info and reports on the commands are present.
 
 ---
 
